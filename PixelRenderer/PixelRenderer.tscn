@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://bl5gdvkylmyg8" path="res://PixelRenderer/data/scripts/models_spawner.gd" id="22_t0cwl"]
 [ext_resource type="Texture2D" uid="uid://b1eg0gu4npj5r" path="res://PixelRenderer/data/icons/delete.png" id="23_ilx0h"]
 [ext_resource type="PackedScene" uid="uid://6f4rhpj0da3q" path="res://Sample/Skeleton_Minion.glb" id="27_wwtbg"]
+[ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="32_owbk2"]
 [ext_resource type="Script" uid="uid://1oqvcrn8dkab" path="res://PixelRenderer/data/scripts/view_materials.gd" id="34_owbk2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6vt7t"]
@@ -1286,17 +1287,48 @@ text = "OUTLINE"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="PixelAdjust9" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=525142001]
+[node name="TabContainer" type="TabContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1873555422]
+layout_mode = 2
+current_tab = 1
+tab_0/title = "Sobel"
+tab_1/title = "Distance"
+
+[node name="OutlineSobel" type="VBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer" unique_id=380150398]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "Sobel"
+
+[node name="PixelAdjust10" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineSobel" unique_id=1036682322]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust9" unique_id=1030971103]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineSobel/PixelAdjust10" unique_id=1206037959]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+text = "Outline:"
+horizontal_alignment = 2
+
+[node name="OutlineSpinBox" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineSobel/PixelAdjust10" unique_id=661867030]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="OutlineColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineSobel/PixelAdjust10" unique_id=632889288]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+
+[node name="PixelAdjust9" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineSobel" unique_id=525142001]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineSobel/PixelAdjust9" unique_id=1030971103]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Brightness:"
 horizontal_alignment = 2
 
-[node name="BrightnessSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust9" unique_id=469545379]
+[node name="BrightnessSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineSobel/PixelAdjust9" unique_id=469545379]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1306,62 +1338,48 @@ min_value = -1.0
 max_value = 1.0
 step = 0.1
 
-[node name="PixelAdjust10" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1036682322]
+[node name="OutlineDistance" type="VBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer" unique_id=1982949571]
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "Distance"
+
+[node name="PixelAdjust11" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance" unique_id=2076113397]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust10" unique_id=1206037959]
-custom_minimum_size = Vector2(220, 0)
-layout_mode = 2
-text = "Outline:"
-horizontal_alignment = 2
-
-[node name="OutlineSpinBox" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust10" unique_id=661867030]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="OutlineColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust10" unique_id=632889288]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(36, 36)
-layout_mode = 2
-
-[node name="PixelAdjust11" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=2076113397]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11" unique_id=1622372139]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance/PixelAdjust11" unique_id=1622372139]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Post-Process :"
 horizontal_alignment = 2
 
-[node name="PostProcessOutline" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11" unique_id=1279064898]
+[node name="PostProcessOutline" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance/PixelAdjust11" unique_id=1279064898]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ShadowStrengthColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11" unique_id=1849133052]
+[node name="ShadowStrengthColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance/PixelAdjust11" unique_id=1849133052]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 edit_intensity = false
 
-[node name="HighlightStrengthColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11" unique_id=510948126]
+[node name="HighlightStrengthColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance/PixelAdjust11" unique_id=510948126]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 color = Color(1, 1, 1, 1)
 
-[node name="PixelAdjust17" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1864082697]
+[node name="PixelAdjust17" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance" unique_id=1864082697]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17" unique_id=2033029117]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance/PixelAdjust17" unique_id=2033029117]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Shadow:"
 horizontal_alignment = 2
 
-[node name="ShadowStrengthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17" unique_id=2141848808]
+[node name="ShadowStrengthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance/PixelAdjust17" unique_id=2141848808]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1371,17 +1389,17 @@ max_value = 0.9900000000052388
 step = 0.1
 value = 0.4
 
-[node name="PixelAdjust18" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1634515047]
+[node name="PixelAdjust18" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance" unique_id=1634515047]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=134918301]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance/PixelAdjust18" unique_id=134918301]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Highlight:"
 horizontal_alignment = 2
 
-[node name="HighlightStrengthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=1929206572]
+[node name="HighlightStrengthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance/PixelAdjust18" unique_id=1929206572]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1390,6 +1408,9 @@ size_flags_vertical = 4
 max_value = 1.0
 step = 0.1
 value = 0.1
+
+[node name="HSeparator12" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=376710322]
+layout_mode = 2
 
 [node name="HSeparator10" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1727341175]
 layout_mode = 2
@@ -1496,6 +1517,170 @@ custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 
 [node name="HSeparator9" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1768229348]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1548929323]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_l23g4")
+text = "Toon"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PixelAdjust17" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=403667576]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17" unique_id=133693847]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+text = "Cuts:"
+horizontal_alignment = 2
+
+[node name="CutsSizeSpin" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17" unique_id=1790628722]
+layout_mode = 2
+
+[node name="AlbedoColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17" unique_id=87708327]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+color = Color(1, 1, 1, 1)
+
+[node name="PixelAdjust21" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=694608899]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust21" unique_id=1711465753]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+text = "Wrap:"
+horizontal_alignment = 2
+
+[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust21" unique_id=1618440598]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+step = 0.01
+
+[node name="PixelAdjust23" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=581256147]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust23" unique_id=139482322]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+text = "Steepness:"
+horizontal_alignment = 2
+
+[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust23" unique_id=889075359]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+step = 0.01
+
+[node name="PixelAdjust25" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1155326762]
+layout_mode = 2
+alignment = 1
+
+[node name="PreviewImageCheckBox2" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust25" unique_id=1292314097]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Export preview (Hi-res)"
+text = "Rim:"
+alignment = 2
+
+[node name="PixelAdjust24" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=648812458]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust24" unique_id=845244948]
+custom_minimum_size = Vector2(165.46, 0)
+layout_mode = 2
+text = "Rim width:"
+horizontal_alignment = 2
+
+[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust24" unique_id=428234545]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+step = 0.01
+
+[node name="AlbedoColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust24" unique_id=265138384]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+color = Color(1, 1, 1, 1)
+
+[node name="PixelAdjust18" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=339269723]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=1091763203]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+text = "Borders:"
+horizontal_alignment = 2
+
+[node name="CutsSizeSpin" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=138362706]
+layout_mode = 2
+
+[node name="AlbedoColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=51723430]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+
+[node name="PixelAdjust19" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=33423858]
+layout_mode = 2
+alignment = 1
+
+[node name="PreviewImageCheckBox2" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust19" unique_id=214907196]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Export preview (Hi-res)"
+text = "Specular:"
+alignment = 2
+
+[node name="PixelAdjust20" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=932416503]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust20" unique_id=1785138888]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+text = "Spec shininess:"
+horizontal_alignment = 2
+
+[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust20" unique_id=565943041]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+step = 0.01
+
+[node name="VBoxContainer21" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=468768597]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/VBoxContainer21" unique_id=11554871]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+text = "Strength:"
+horizontal_alignment = 2
+
+[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/VBoxContainer21" unique_id=1814765135]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+step = 0.01
+
+[node name="PixelAdjust22" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=340370141]
+layout_mode = 2
+alignment = 1
+
+[node name="PreviewImageCheckBox2" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust22" unique_id=1078358472]
+layout_mode = 2
+tooltip_text = "Export preview (Hi-res)"
+text = "Ramp:"
+alignment = 2
+
+[node name="HSeparator13" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=57230994]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainUI" unique_id=609893450]
@@ -3183,10 +3368,10 @@ autoplay = &"Idle"
 
 [node name="Grid" type="MeshInstance3D" parent="ModelsHandler/ModelsSpawner" unique_id=230084947]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.006085396, -1.1920929e-07, 0.0049538612)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.026810646, -3.5762787e-07, 0.0086631775)
 mesh = SubResource("PlaneMesh_6vt7t")
 skeleton = NodePath("../../../Gizmo")
-surface_material_override/0 = ExtResource("2_6vt7t")
+surface_material_override/0 = ExtResource("32_owbk2")
 
 [node name="PixelMaterial" type="Node" parent="." unique_id=324453165]
 script = ExtResource("16_yc5xn")
