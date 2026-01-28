@@ -15,24 +15,31 @@ var reference_res: int = 1080
 var _base_dot_scale: float = 5.0
 
 func _ready():
-	# Wait a frame to ensure RenderingServer has synced global uniforms from ProjectSettings
-	for i in range(20):
-		await get_tree().process_frame	
-	# Sync all settings from ProjectSettings to RenderingServer
-	# This ensures that exported games (Runtime) load the correct values from project.godot
-	_sync_from_project_settings()
-	
-	# Initialize base scale from current global setting
-	# We use a safe check to avoid errors if the uniform isn't registered yet
+	# NOTE: _sync_from_project_settings() uses editor-only RenderingServer API.
+	# Do NOT call it in runtime builds — protect it with Engine.is_editor_hint().
+	if Engine.is_editor_hint():
+		# Wait a frame to ensure RenderingServer has synced global uniforms from ProjectSettings
+		for i in range(20):
+			await get_tree().process_frame
+		# Sync all settings from ProjectSettings to RenderingServer (editor-only)
+		_sync_from_project_settings()
+
+	# Initialize base scale from current global setting.
+	# Use ProjectSettings fallback in runtime to avoid unsafe RenderingServer calls.
 	var current_scale = _safe_get_global("dither_dot_scale")
 	if current_scale != null:
 		_base_dot_scale = current_scale
-	
-	# Connect to screen resize
+
+	# Connect to screen resize (safe both in editor and runtime)
 	get_tree().root.size_changed.connect(_on_viewport_size_changed)
 	_on_viewport_size_changed() # Initial update
 
 func _sync_from_project_settings():
+	# This whole function should run ONLY in the editor.
+	if not Engine.is_editor_hint():
+		return
+
+	# Editor-only: asking RS for registered globals (unsafe in runtime).
 	var available_globals = RenderingServer.global_shader_parameter_get_list()
 	# List of all our global variables
 	var vars = [
@@ -40,10 +47,10 @@ func _sync_from_project_settings():
 		"dither_dot_scale", "dither_size_variability", "dither_contrast", "dither_stretch_smoothness",
 		"dither_inverse_dots", "dither_radial_compensation", "dither_quantize_layers", "dither_debug_fractal"
 	]
-	
+
 	for v in vars:
 		if v in available_globals:
-			_sync_single_var(v)		
+			_sync_single_var(v)
 	# Textures need special handling (loading from path)
 	if "dither_tex" in available_globals:
 		_sync_texture_var("dither_tex")
@@ -55,6 +62,7 @@ func _sync_single_var(name: String):
 	if ProjectSettings.has_setting(setting_path):
 		var dict = ProjectSettings.get_setting(setting_path)
 		if dict is Dictionary and "value" in dict:
+			# Editor-only immediate set (safe because _sync_from_project_settings runs only in editor)
 			RenderingServer.global_shader_parameter_set(name, dict["value"])
 
 func _sync_texture_var(name: String):
@@ -69,11 +77,19 @@ func _sync_texture_var(name: String):
 					RenderingServer.global_shader_parameter_set(name, tex)
 
 func _safe_get_global(name: String):
-	# In Godot 4.x, global_shader_parameter_get prints an error if the uniform doesn't exist.
-	# We can't easily check existence via RenderingServer API directly without error spam.
-	# So we check ProjectSettings first, which is the source of truth for "registered" globals.
-	if ProjectSettings.has_setting("shader_globals/" + name):
-		return RenderingServer.global_shader_parameter_get(name)
+	# Safer global read:
+	# 1) Prefer reading the value stored in ProjectSettings (always available after plugin registration).
+	# 2) Only query RenderingServer when running in the editor (where that RS query is safe).
+	var setting_path = "shader_globals/" + name
+	if ProjectSettings.has_setting(setting_path):
+		var dict = ProjectSettings.get_setting(setting_path)
+		if dict is Dictionary and "value" in dict:
+			# Editor: prefer RenderingServer value (keeps UI consistent in-editor).
+			if Engine.is_editor_hint():
+				# This call is editor-only and will be skipped in runtime by the above guard.
+				return RenderingServer.global_shader_parameter_get(name)
+			# Runtime: return stored ProjectSettings value (avoid RS editor-only queries).
+			return dict["value"]
 	return null
 
 func _on_viewport_size_changed():
@@ -85,14 +101,14 @@ func _update_dot_scale_dynamic():
 	# Avoid div by zero or invalid sizes
 	if viewport_height <= 0 or reference_res <= 0:
 		return
-		
+
 	var multiplier = float(viewport_height) / float(reference_res)
 	var log_delta = 0.0
 	if multiplier > 0.0:
 		log_delta = log(multiplier) / log(2.0)
-	
+
 	var final_scale = _base_dot_scale + log_delta
-	
+
 	# Only set if registered
 	if ProjectSettings.has_setting("shader_globals/dither_dot_scale"):
 		RenderingServer.global_shader_parameter_set("dither_dot_scale", final_scale)

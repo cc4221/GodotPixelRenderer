@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://iyby61de0rw8"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://iyby61de0rw8"]
 
 [ext_resource type="Shader" uid="uid://cg0cvdoe017yd" path="res://pixelart_stylizer.gdshader" id="1_30kiv"]
 

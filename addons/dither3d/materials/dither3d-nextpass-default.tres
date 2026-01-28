@@ -1,8 +1,8 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://wr2xj4g4nn5n"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://wr2xj4g4nn5n"]
 
 [ext_resource type="Shader" uid="uid://dd0yijewrwe4r" path="res://addons/dither3d/shaders/Dither3DNextPass.gdshader" id="1_gqnjp"]
 [ext_resource type="Texture2D" uid="uid://sub8nrtn652" path="res://addons/dither3d/textures/Dither3D_8x8_Ramp.png" id="2_m7qwr"]
-[ext_resource type="ImageTexture3D" uid="uid://d3oy3k1ohpcj8" path="res://addons/dither3d/textures/Dither3D_8x8.res" id="3_4tnsa"]
+[ext_resource type="ImageTexture3D" uid="uid://4p4plv3aprr" path="res://addons/dither3d/textures/Dither3D_4x4.res" id="3_gqnjp"]
 
 [resource]
 render_priority = 0
@@ -10,13 +10,13 @@ shader = ExtResource("1_gqnjp")
 shader_parameter/input_exposure = 1.0
 shader_parameter/input_offset = 0.0
 shader_parameter/dither_mode = 1
-shader_parameter/dither_tex = ExtResource("3_4tnsa")
+shader_parameter/dither_tex = ExtResource("3_gqnjp")
 shader_parameter/dither_ramp_tex = ExtResource("2_m7qwr")
 shader_parameter/dot_scale = 5.0
-shader_parameter/size_variability = 0.800000038
-shader_parameter/contrast = 2.0
-shader_parameter/stretch_smoothness = 2.0
+shader_parameter/size_variability = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/stretch_smoothness = 1.0
 shader_parameter/inverse_dots = false
-shader_parameter/radial_compensation = true
-shader_parameter/quantize_layers = false
+shader_parameter/radial_compensation = false
+shader_parameter/quantize_layers = true
 shader_parameter/debug_fractal = false
