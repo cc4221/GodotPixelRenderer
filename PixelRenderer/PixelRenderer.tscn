@@ -215,7 +215,8 @@ theme_override_constants/separation = 10
 [node name="HBoxContainer9" type="HBoxContainer" parent="MainUI/UI_Controls2/ScrollContainer/LeftPanel" unique_id=1448042226]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MainUI/UI_Controls2/ScrollContainer/LeftPanel/HBoxContainer9" unique_id=967545028]
+[node name="Close" type="TextureRect" parent="MainUI/UI_Controls2/ScrollContainer/LeftPanel/HBoxContainer9" unique_id=967545028]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("4_x1hdl")
@@ -405,6 +406,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 tooltip_text = "Set resolution"
+max_value = 1024.0
 value = 100.0
 allow_greater = true
 suffix = "px"
@@ -910,6 +912,7 @@ expand_icon = true
 layout_mode = 2
 
 [node name="Gizmo" type="HBoxContainer" parent="MainUI/UI_Controls2/ScrollContainer/LeftPanel" unique_id=1064593794]
+custom_minimum_size = Vector2(550, 40)
 layout_mode = 2
 theme_override_constants/separation = 20
 script = ExtResource("19_ilx0h")
@@ -975,20 +978,21 @@ layout_mode = 2
 texture = SubResource("ViewportTexture_tkbio")
 metadata/_edit_lock_ = true
 
-[node name="CanvasSizeLabel" type="Label" parent="MainUI/Renderer" unique_id=64494789]
-unique_name_in_owner = true
+[node name="TabContainer" type="TabContainer" parent="MainUI/Renderer" unique_id=397238467]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.479183, 0.479183, 0.479183, 1)
-theme_override_font_sizes/font_size = 16
-text = "Canvas size: 512 px"
-horizontal_alignment = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+current_tab = 1
+tab_1/title = "3D"
 
-[node name="Console" type="HBoxContainer" parent="MainUI/Renderer" unique_id=365053506]
+[node name="Console" type="HBoxContainer" parent="MainUI/Renderer/TabContainer" unique_id=365053506]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
+metadata/_tab_index = 0
 
-[node name="Console" type="TextEdit" parent="MainUI/Renderer/Console" unique_id=1425085111]
+[node name="Console" type="TextEdit" parent="MainUI/Renderer/TabContainer/Console" unique_id=1425085111]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1006,6 +1010,35 @@ wrap_mode = 1
 indent_wrapped_lines = true
 virtual_keyboard_enabled = false
 scroll_smooth = true
+
+[node name="Panel2" type="Panel" parent="MainUI/Renderer/TabContainer" unique_id=888169517]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1hdl")
+metadata/_tab_index = 1
+metadata/_tab_name = "3D"
+
+[node name="TextureRect" type="TextureRect" parent="MainUI/Renderer/TabContainer/Panel2" unique_id=218528495]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("ViewportTexture_6vt7t")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="CanvasSizeLabel" type="Label" parent="MainUI/Renderer" unique_id=791192421]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.479183, 0.479183, 0.479183, 1)
+theme_override_font_sizes/font_size = 16
+text = "Canvas size: 512 px"
+horizontal_alignment = 1
 
 [node name="UI_Controls" type="VBoxContainer" parent="MainUI" unique_id=2044885333]
 layout_mode = 2
@@ -1241,6 +1274,18 @@ max_value = 5.0
 step = 0.1
 value = 1.0
 
+[node name="HSeparator11" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1559163930]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1591386465]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_l23g4")
+text = "OUTLINE"
+horizontal_alignment = 1
+vertical_alignment = 2
+
 [node name="PixelAdjust9" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=525142001]
 layout_mode = 2
 theme_override_constants/separation = 10
@@ -1452,27 +1497,6 @@ layout_mode = 2
 
 [node name="HSeparator9" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1768229348]
 layout_mode = 2
-
-[node name="Panel2" type="Panel" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1497517027]
-custom_minimum_size = Vector2(200, 250)
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_x1hdl")
-
-[node name="TextureRect" type="TextureRect" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/Panel2" unique_id=920038275]
-clip_contents = true
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = SubResource("ViewportTexture_6vt7t")
-expand_mode = 1
-stretch_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainUI" unique_id=609893450]
 layout_mode = 2

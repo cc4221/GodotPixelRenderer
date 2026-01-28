@@ -7,6 +7,8 @@ extends Node3D
 
 @onready var file_dialog: FileDialog = %FileDialog
 @onready var texture_rect: TextureRect = %PixelCanvas
+@onready var close_button: TextureRect = %Close
+var original_close_texture: Texture2D
 
 @onready var fps_spin_box: SpinBox = %FpsSpin
 
@@ -87,6 +89,7 @@ func _ready():
 	file_dialog.dir_selected.connect(_on_directory_selected)
 	bg_color_check_box.toggled.connect(_on_bg_color_toggled)
 	bg_color_picker.color_changed.connect(_on_bg_color_changed)
+	close_button.gui_input.connect(_on_close_button_input)
 	
 	# Setup View Modes
 	_setup_view_mode_dropdown()
@@ -94,6 +97,11 @@ func _ready():
 	
 	# Connect to ViewMaterials signal for automatic color remap toggle
 	get_node("ViewMaterials").technical_mode_selected.connect(_on_technical_mode_selected)
+	
+	# Store original close button texture and connect mouse enter/exit events
+	original_close_texture = close_button.texture
+	close_button.mouse_entered.connect(_on_close_button_mouse_entered)
+	close_button.mouse_exited.connect(_on_close_button_mouse_exited)
 	
 	# Set up file dialog
 	file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_DIR
@@ -558,3 +566,16 @@ func _setup_view_mode_dropdown():
 	view_mode_dropdown.add_item("Albedo")
 	view_mode_dropdown.add_item("Normal")
 	view_mode_dropdown.add_item("Specular")
+func _on_close_button_input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		get_tree().quit()
+
+func _on_close_button_mouse_entered():
+	# Change texture when mouse enters the button area
+	if ResourceLoader.exists("res://PixelRenderer2.png"):
+		var hover_texture = load("res://PixelRenderer2.png") as Texture2D
+		close_button.texture = hover_texture
+
+func _on_close_button_mouse_exited():
+	# Restore original texture when mouse exits the button area
+	close_button.texture = original_close_texture
