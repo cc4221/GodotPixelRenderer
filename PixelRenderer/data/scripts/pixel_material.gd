@@ -236,6 +236,12 @@ func _initialize_color_presets():
 	# Start with built-in color presets
 	all_color_presets = BUILTIN_COLOR_PRESETS.duplicate(true)
 	
+	# Load GPL palettes from PaletteGPL folder
+	_load_gpl_palettes()
+	
+	# Load HEX palettes from PaletteHEX folder
+	_load_hex_palettes()
+	
 	# Load saved custom colors
 	_load_custom_colors()
 	
@@ -578,6 +584,153 @@ func _update_color_preset_selection():
 		if filtered_color_presets[i] == current_color_preset_name:
 			color_preset_option_button.selected = i
 			break
+
+func _load_gpl_palettes():
+	"""Load all GPL palette files from the PaletteGPL folder"""
+	var palette_folder = "res://PaletteGPL"
+	
+	var dir = DirAccess.open(palette_folder)
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		var loaded_count = 0
+		var palette_names = []
+		
+		while file_name != "":
+			if not file_name.begins_with(".") and file_name.ends_with(".gpl"):
+				var file_path = palette_folder + "/" + file_name
+				var palette_data = _parse_gpl_file(file_path)
+				
+				if palette_data:
+					var palette_name = file_name.trim_suffix(".gpl")
+					all_color_presets[palette_name] = palette_data
+					loaded_count += 1
+					palette_names.append(palette_name)
+			
+			file_name = dir.get_next()
+		
+		if loaded_count > 0:
+			_update_console("Loaded " + str(loaded_count) + " GPL palette(s): " + ", ".join(palette_names))
+	else:
+		_update_console("Warning: PaletteGPL folder not found")
+
+func _parse_gpl_file(file_path: String) -> Dictionary:
+	"""Parse a GIMP Palette (.gpl) file and return a color dictionary"""
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	if file == null:
+		_update_console("Error: Could not open palette file: " + file_path)
+		return {}
+	
+	var palette_colors = {}
+	var color_index = 1
+	
+	while not file.eof_reached():
+		var line = file.get_line().strip_edges()
+		
+		# Skip empty lines and comments
+		if line.is_empty() or line.begins_with("#"):
+			continue
+		
+		# Skip GIMP Palette header
+		if line == "GIMP Palette":
+			continue
+		
+		# Parse color line: RGB values followed by hex or name
+		# Format: R G B HEX_VALUE [COLOR_NAME]
+		# Try splitting by tabs first, then by spaces
+		var parts = line.split("\t")
+		if parts.size() < 3:
+			parts = line.split(" ")
+		
+		if parts.size() >= 3:
+			var r_str = parts[0].strip_edges()
+			var g_str = parts[1].strip_edges()
+			var b_str = parts[2].strip_edges()
+			
+			# Try to parse as integers
+			if r_str.is_valid_int() and g_str.is_valid_int() and b_str.is_valid_int():
+				var r = int(r_str)
+				var g = int(g_str)
+				var b = int(b_str)
+				
+				# Clamp values to 0-255
+				r = clampi(r, 0, 255)
+				g = clampi(g, 0, 255)
+				b = clampi(b, 0, 255)
+				
+				var color = Color(r / 255.0, g / 255.0, b / 255.0, 1.0)
+				var color_key = "palette_color_" + str(color_index)
+				palette_colors[color_key] = color
+				color_index += 1
+	
+	if palette_colors.size() > 0:
+		_update_console("Parsed " + str(palette_colors.size()) + " colors from " + file_path.get_file())
+	
+	return palette_colors
+
+func _load_hex_palettes():
+	"""Load all HEX palette files from the PaletteHEX folder"""
+	var palette_folder = "res://PaletteHEX"
+	
+	var dir = DirAccess.open(palette_folder)
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		var loaded_count = 0
+		var palette_names = []
+		
+		while file_name != "":
+			if not file_name.begins_with(".") and file_name.ends_with(".hex"):
+				var file_path = palette_folder + "/" + file_name
+				var palette_data = _parse_hex_file(file_path)
+				
+				if palette_data:
+					var palette_name = file_name.trim_suffix(".hex")
+					all_color_presets[palette_name] = palette_data
+					loaded_count += 1
+					palette_names.append(palette_name)
+			
+			file_name = dir.get_next()
+		
+		if loaded_count > 0:
+			_update_console("Loaded " + str(loaded_count) + " HEX palette(s): " + ", ".join(palette_names))
+
+func _parse_hex_file(file_path: String) -> Dictionary:
+	"""Parse a HEX palette file (simple hex colors, one per line) and return a color dictionary"""
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	if file == null:
+		_update_console("Error: Could not open palette file: " + file_path)
+		return {}
+	
+	var palette_colors = {}
+	var color_index = 1
+	
+	while not file.eof_reached():
+		var line = file.get_line().strip_edges()
+		
+		# Skip empty lines and comments
+		if line.is_empty() or line.begins_with("#"):
+			continue
+		
+		# Parse hex color
+		# Format: RRGGBB or #RRGGBB
+		var hex_color = line
+		if not hex_color.begins_with("#"):
+			hex_color = "#" + hex_color
+		
+		# Validate and parse hex color using Color.html()
+		if hex_color.length() == 7 and hex_color.is_valid_html_color():
+			var color = Color.html(hex_color)
+			# Ensure alpha is fully opaque
+			color.a = 1.0
+			var color_key = "palette_color_" + str(color_index)
+			palette_colors[color_key] = color
+			color_index += 1
+	
+	if palette_colors.size() > 0:
+		_update_console("Parsed " + str(palette_colors.size()) + " colors from " + file_path.get_file())
+	
+	return palette_colors
 
 func _load_custom_colors():
 	var config = ConfigFile.new()

@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://addons/dither3d/shaders/global/Dither3DSkyboxPanoramaGlobal.gdshader" id="1_global"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_global")
+shader_parameter/tint_color = Color(0.5, 0.5, 0.5, 0.5)
+shader_parameter/exposure = 1.0
+shader_parameter/rotation = 0.0

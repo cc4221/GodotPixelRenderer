@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://y4o6ttmh8hb4"]
+[gd_scene format=3 uid="uid://y4o6ttmh8hb4"]
 
 [ext_resource type="Script" uid="uid://dhq1ywbp8nv12" path="res://PixelRenderer/data/scripts/PixelRenderer.gd" id="1_5ibnk"]
 [ext_resource type="Material" uid="uid://dn8s72rfum4y4" path="res://PixelRenderer/data/Gizmo.tres" id="2_6vt7t"]
@@ -79,85 +79,85 @@ bg_color = Color(0.117647, 0.117647, 0.117647, 1)
 size = Vector2(100, 100)
 orientation = 0
 
-[node name="PixelRenderer" type="Node3D"]
+[node name="PixelRenderer" type="Node3D" unique_id=1991635441]
 script = ExtResource("1_5ibnk")
 
-[node name="Gizmo" type="Node3D" parent="."]
+[node name="Gizmo" type="Node3D" parent="." unique_id=2051808171]
 
-[node name="Axis" type="MeshInstance3D" parent="Gizmo"]
+[node name="Axis" type="MeshInstance3D" parent="Gizmo" unique_id=1464914704]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 mesh = SubResource("BoxMesh_6vt7t")
 surface_material_override/0 = ExtResource("2_6vt7t")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Gizmo/Axis"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Gizmo/Axis" unique_id=2101764025]
 transform = Transform3D(1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("BoxMesh_6vt7t")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_6vt7t")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Gizmo/Axis"]
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Gizmo/Axis" unique_id=733863478]
 transform = Transform3D(-8.35187e-23, 1, -8.74228e-08, -1.91069e-15, -8.74228e-08, -1, -1, 0, 1.91069e-15, 0, 0, 0)
 mesh = SubResource("BoxMesh_6vt7t")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_6vt7t")
 
-[node name="Origin" type="MeshInstance3D" parent="Gizmo"]
+[node name="Origin" type="MeshInstance3D" parent="Gizmo" unique_id=209095932]
 unique_name_in_owner = true
 visible = false
 mesh = SubResource("SphereMesh_ilx0h")
 surface_material_override/0 = ExtResource("2_6vt7t")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Gizmo/Origin"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Gizmo/Origin" unique_id=976005631]
 mesh = SubResource("BoxMesh_x1hdl")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_6vt7t")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Gizmo/Origin"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Gizmo/Origin" unique_id=94127675]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_x1hdl")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_6vt7t")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1273199207]
 environment = SubResource("Environment_wwtbg")
 
-[node name="KeyLight" type="DirectionalLight3D" parent="."]
+[node name="KeyLight" type="DirectionalLight3D" parent="." unique_id=771401539]
 unique_name_in_owner = true
 transform = Transform3D(0.5, -0.75, 0.433013, 0, 0.5, 0.866026, -0.866025, -0.433013, 0.25, 0, 0, 0)
 shadow_enabled = true
 
-[node name="FillLight" type="DirectionalLight3D" parent="."]
+[node name="FillLight" type="DirectionalLight3D" parent="." unique_id=1885269925]
 unique_name_in_owner = true
 transform = Transform3D(0.866025, -0.433013, -0.25, 0, 0.5, -0.866025, 0.5, 0.75, 0.433013, 0, 0, 0)
 light_energy = 0.2
 shadow_enabled = true
 
-[node name="RimLight" type="DirectionalLight3D" parent="."]
+[node name="RimLight" type="DirectionalLight3D" parent="." unique_id=766665678]
 unique_name_in_owner = true
 transform = Transform3D(-0.931056, -0.182438, 0.315993, 0, 0.866025, 0.5, -0.364877, 0.465528, -0.806318, 0, 0, 0)
 light_energy = 100.0
 shadow_enabled = true
 
-[node name="FileDialog" type="FileDialog" parent="."]
+[node name="FileDialog" type="FileDialog" parent="." unique_id=507687746]
 unique_name_in_owner = true
 position = Vector2i(0, 36)
 theme = ExtResource("2_l23g4")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1920855728]
 unique_name_in_owner = true
 transparent_bg = true
 canvas_item_default_texture_filter = 0
 size = Vector2i(800, 800)
 
-[node name="Camera" type="Camera3D" parent="SubViewport"]
+[node name="Camera" type="Camera3D" parent="SubViewport" unique_id=2050114702]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 100)
 projection = 1
 size = 4.0
 
-[node name="Postprocess" type="MeshInstance3D" parent="SubViewport/Camera"]
+[node name="Postprocess" type="MeshInstance3D" parent="SubViewport/Camera" unique_id=1228351046]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, -0.044, -0.872)
 cast_shadow = 0
@@ -166,17 +166,17 @@ ignore_occlusion_culling = true
 mesh = SubResource("QuadMesh_e8x0m")
 skeleton = NodePath("")
 
-[node name="SubViewport2" type="SubViewport" parent="."]
+[node name="SubViewport2" type="SubViewport" parent="." unique_id=1745358599]
 transparent_bg = true
 
-[node name="Camera3D" type="Camera3D" parent="SubViewport2"]
+[node name="Camera3D" type="Camera3D" parent="SubViewport2" unique_id=1611659636]
 transform = Transform3D(0.599317, -0.566047, 0.566047, 0, 0.707107, 0.707107, -0.800512, -0.423781, 0.423781, 15.5528, 20, 11.5574)
 projection = 1
 size = 7.773
 
-[node name="ViewportBackgroundColorRect" type="ColorRect" parent="."]
+[node name="ViewportBackgroundColorRect" type="ColorRect" parent="." unique_id=1735892155]
 custom_minimum_size = Vector2(800, 800)
-anchors_preset = -1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -400.0
@@ -185,7 +185,7 @@ offset_bottom = 800.0
 grow_horizontal = 2
 color = Color(0.0911215, 0.0911214, 0.0911214, 1)
 
-[node name="MainUI" type="HBoxContainer" parent="."]
+[node name="MainUI" type="HBoxContainer" parent="." unique_id=1297800728]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -193,30 +193,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_l23g4")
 
-[node name="Spacer" type="Panel" parent="MainUI"]
+[node name="Spacer" type="Panel" parent="MainUI" unique_id=608050325]
 layout_mode = 2
 
-[node name="LeftPanel" type="VBoxContainer" parent="MainUI"]
+[node name="LeftPanel" type="VBoxContainer" parent="MainUI" unique_id=1536822110]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer9" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="HBoxContainer9" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=1448042226]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/HBoxContainer9"]
+[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/HBoxContainer9" unique_id=967545028]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("4_x1hdl")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="TitleBar" type="VBoxContainer" parent="MainUI/LeftPanel/HBoxContainer9"]
+[node name="TitleBar" type="VBoxContainer" parent="MainUI/LeftPanel/HBoxContainer9" unique_id=1089159603]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer9/TitleBar"]
+[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer9/TitleBar" unique_id=2075614215]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -225,7 +225,7 @@ text = "GODOT PIXEL RENDERER"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Label6" type="Label" parent="MainUI/LeftPanel/HBoxContainer9/TitleBar"]
+[node name="Label6" type="Label" parent="MainUI/LeftPanel/HBoxContainer9/TitleBar" unique_id=2052852989]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.396889, 0.396889, 0.396889, 1)
@@ -235,13 +235,13 @@ text = "3D to PixelArt toolkit"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="HSeparator4" type="HSeparator" parent="MainUI/LeftPanel"]
+[node name="HSeparator4" type="HSeparator" parent="MainUI/LeftPanel" unique_id=1650818676]
 layout_mode = 2
 
-[node name="SceneLoaded" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="SceneLoaded" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=391789543]
 layout_mode = 2
 
-[node name="LoadSceneButton" type="Button" parent="MainUI/LeftPanel/SceneLoaded"]
+[node name="LoadSceneButton" type="Button" parent="MainUI/LeftPanel/SceneLoaded" unique_id=1976834782]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 36)
 layout_mode = 2
@@ -249,7 +249,7 @@ text = "LOAD"
 icon = ExtResource("4_sen5r")
 expand_icon = true
 
-[node name="LoadScenePath" type="Label" parent="MainUI/LeftPanel/SceneLoaded"]
+[node name="LoadScenePath" type="Label" parent="MainUI/LeftPanel/SceneLoaded" unique_id=710490696]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -257,13 +257,13 @@ theme_override_colors/font_color = Color(0.473976, 0.473976, 0.473976, 1)
 text = "://path-to-loaded-asset"
 clip_text = true
 
-[node name="HSeparator8" type="HSeparator" parent="MainUI/LeftPanel"]
+[node name="HSeparator8" type="HSeparator" parent="MainUI/LeftPanel" unique_id=2004595564]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=1771314802]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainUI/LeftPanel/HBoxContainer"]
+[node name="Label" type="Label" parent="MainUI/LeftPanel/HBoxContainer" unique_id=2137145117]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -272,17 +272,17 @@ text = "ANIMATION"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=1913991571]
 layout_mode = 2
 
-[node name="AnimationSelector" type="OptionButton" parent="MainUI/LeftPanel/HBoxContainer7"]
+[node name="AnimationSelector" type="OptionButton" parent="MainUI/LeftPanel/HBoxContainer7" unique_id=233905467]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 clip_text = true
 fit_to_longest_item = false
 
-[node name="AnimPlayButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer7"]
+[node name="AnimPlayButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer7" unique_id=1168934189]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -291,7 +291,7 @@ icon = ExtResource("4_6wj3c")
 icon_alignment = 1
 expand_icon = true
 
-[node name="AnimPauseButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer7"]
+[node name="AnimPauseButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer7" unique_id=2016014779]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -300,7 +300,7 @@ icon = ExtResource("5_t0cwl")
 icon_alignment = 1
 expand_icon = true
 
-[node name="AnimStopButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer7"]
+[node name="AnimStopButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer7" unique_id=853160701]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -309,7 +309,7 @@ icon = ExtResource("6_l23g4")
 icon_alignment = 1
 expand_icon = true
 
-[node name="AnimLoopToggleButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer7"]
+[node name="AnimLoopToggleButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer7" unique_id=1947103198]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -319,48 +319,48 @@ icon = ExtResource("7_wwtbg")
 icon_alignment = 1
 expand_icon = true
 
-[node name="AnimSlider" type="HSlider" parent="MainUI/LeftPanel"]
+[node name="AnimSlider" type="HSlider" parent="MainUI/LeftPanel" unique_id=1832303422]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Visual feedback for current frame"
 tick_count = 10
 ticks_on_borders = true
 
-[node name="ExportOptions2" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="ExportOptions2" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=1720076754]
 layout_mode = 2
 
-[node name="Label8" type="Label" parent="MainUI/LeftPanel/ExportOptions2"]
+[node name="Label8" type="Label" parent="MainUI/LeftPanel/ExportOptions2" unique_id=2077294282]
 layout_mode = 2
 text = " START:"
 
-[node name="StartSpin" type="SpinBox" parent="MainUI/LeftPanel/ExportOptions2"]
+[node name="StartSpin" type="SpinBox" parent="MainUI/LeftPanel/ExportOptions2" unique_id=1020043857]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Set animation start frame"
 value = 1.0
 
-[node name="Label2" type="Label" parent="MainUI/LeftPanel/ExportOptions2"]
+[node name="Label2" type="Label" parent="MainUI/LeftPanel/ExportOptions2" unique_id=1744467289]
 layout_mode = 2
 text = " END:"
 
-[node name="EndSpin" type="SpinBox" parent="MainUI/LeftPanel/ExportOptions2"]
+[node name="EndSpin" type="SpinBox" parent="MainUI/LeftPanel/ExportOptions2" unique_id=335703133]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Set animation end frame"
 value = 30.0
 
-[node name="Label3" type="Label" parent="MainUI/LeftPanel/ExportOptions2"]
+[node name="Label3" type="Label" parent="MainUI/LeftPanel/ExportOptions2" unique_id=1982655456]
 layout_mode = 2
 text = " FPS:"
 
-[node name="FpsSpin" type="SpinBox" parent="MainUI/LeftPanel/ExportOptions2"]
+[node name="FpsSpin" type="SpinBox" parent="MainUI/LeftPanel/ExportOptions2" unique_id=956382836]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Set animation playback speed"
 max_value = 60.0
 value = 12.0
 
-[node name="FrameResetButton" type="Button" parent="MainUI/LeftPanel/ExportOptions2"]
+[node name="FrameResetButton" type="Button" parent="MainUI/LeftPanel/ExportOptions2" unique_id=382985994]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -368,10 +368,10 @@ tooltip_text = "Reset animation parameters"
 icon = ExtResource("9_ilx0h")
 expand_icon = true
 
-[node name="HSeparator9" type="HSeparator" parent="MainUI/LeftPanel"]
+[node name="HSeparator9" type="HSeparator" parent="MainUI/LeftPanel" unique_id=1017653941]
 layout_mode = 2
 
-[node name="Label4" type="Label" parent="MainUI/LeftPanel"]
+[node name="Label4" type="Label" parent="MainUI/LeftPanel" unique_id=282217711]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_l23g4")
@@ -379,17 +379,17 @@ text = " OUTPUT "
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="ExportResolution" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="ExportResolution" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=173911337]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/ExportResolution"]
+[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/ExportResolution" unique_id=1444383226]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("8_t0cwl")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Resolution" type="SpinBox" parent="MainUI/LeftPanel/ExportResolution"]
+[node name="Resolution" type="SpinBox" parent="MainUI/LeftPanel/ExportResolution" unique_id=870649042]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
@@ -398,11 +398,11 @@ value = 100.0
 allow_greater = true
 suffix = "px"
 
-[node name="Label2" type="Label" parent="MainUI/LeftPanel/ExportResolution"]
+[node name="Label2" type="Label" parent="MainUI/LeftPanel/ExportResolution" unique_id=2015891145]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PrefixText" type="LineEdit" parent="MainUI/LeftPanel/ExportResolution"]
+[node name="PrefixText" type="LineEdit" parent="MainUI/LeftPanel/ExportResolution" unique_id=1418764171]
 unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(186.53, 0)
@@ -412,11 +412,11 @@ tooltip_text = "Add naming prefix
 e.g. 'run1' will result in run1_0001"
 placeholder_text = "prefix text"
 
-[node name="Label3" type="Label" parent="MainUI/LeftPanel/ExportResolution"]
+[node name="Label3" type="Label" parent="MainUI/LeftPanel/ExportResolution" unique_id=208910143]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ExportButton" type="Button" parent="MainUI/LeftPanel/ExportResolution"]
+[node name="ExportButton" type="Button" parent="MainUI/LeftPanel/ExportResolution" unique_id=1365308293]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
@@ -424,11 +424,11 @@ text = "EXPORT"
 icon = ExtResource("9_l23g4")
 expand_icon = true
 
-[node name="ExportOptions4" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="ExportOptions4" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=143563977]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="SelectFolderButton" type="Button" parent="MainUI/LeftPanel/ExportOptions4"]
+[node name="SelectFolderButton" type="Button" parent="MainUI/LeftPanel/ExportOptions4" unique_id=1363842317]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(188, 36)
 layout_mode = 2
@@ -436,7 +436,7 @@ text = "EXPORT DIR"
 icon = ExtResource("4_sen5r")
 expand_icon = true
 
-[node name="ExportDirPath" type="Label" parent="MainUI/LeftPanel/ExportOptions4"]
+[node name="ExportDirPath" type="Label" parent="MainUI/LeftPanel/ExportOptions4" unique_id=1286746053]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -444,46 +444,46 @@ theme_override_colors/font_color = Color(0.473976, 0.473976, 0.473976, 1)
 text = "://path-to-export-dir"
 clip_text = true
 
-[node name="ProgressBar" type="ProgressBar" parent="MainUI/LeftPanel"]
+[node name="ProgressBar" type="ProgressBar" parent="MainUI/LeftPanel" unique_id=1767561652]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=244762731]
 layout_mode = 2
 
-[node name="PreviewImageCheckBox" type="CheckButton" parent="MainUI/LeftPanel/HBoxContainer5"]
+[node name="PreviewImageCheckBox" type="CheckButton" parent="MainUI/LeftPanel/HBoxContainer5" unique_id=129871727]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Export preview (Hi-res)"
 text = " PREVIEW"
 alignment = 2
 
-[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer5"]
+[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer5" unique_id=1749809178]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BgColorCheckBox" type="CheckButton" parent="MainUI/LeftPanel/HBoxContainer5"]
+[node name="BgColorCheckBox" type="CheckButton" parent="MainUI/LeftPanel/HBoxContainer5" unique_id=399173067]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Set Background Color"
 text = "BG"
 
-[node name="BgColorPicker" type="ColorPickerButton" parent="MainUI/LeftPanel/HBoxContainer5"]
+[node name="BgColorPicker" type="ColorPickerButton" parent="MainUI/LeftPanel/HBoxContainer5" unique_id=1583266818]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 0)
 layout_mode = 2
 color = Color(1, 1, 1, 1)
 
-[node name="Label6" type="Label" parent="MainUI/LeftPanel/HBoxContainer5"]
+[node name="Label6" type="Label" parent="MainUI/LeftPanel/HBoxContainer5" unique_id=243023741]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label4" type="Label" parent="MainUI/LeftPanel/HBoxContainer5"]
+[node name="Label4" type="Label" parent="MainUI/LeftPanel/HBoxContainer5" unique_id=144574245]
 layout_mode = 2
 text = "MODE:"
 
-[node name="ViewModeDropDown" type="OptionButton" parent="MainUI/LeftPanel/HBoxContainer5"]
+[node name="ViewModeDropDown" type="OptionButton" parent="MainUI/LeftPanel/HBoxContainer5" unique_id=959148240]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
@@ -492,13 +492,13 @@ theme = ExtResource("2_l23g4")
 clip_text = true
 fit_to_longest_item = false
 
-[node name="HSeparator3" type="HSeparator" parent="MainUI/LeftPanel"]
+[node name="HSeparator3" type="HSeparator" parent="MainUI/LeftPanel" unique_id=1258657592]
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=177358597]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainUI/LeftPanel/HBoxContainer3"]
+[node name="Label" type="Label" parent="MainUI/LeftPanel/HBoxContainer3" unique_id=945068715]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -507,61 +507,61 @@ text = "ADJUSTMENTS"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="PositionAdjust" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="PositionAdjust" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=1368658699]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label7" type="Label" parent="MainUI/LeftPanel/PositionAdjust"]
+[node name="Label7" type="Label" parent="MainUI/LeftPanel/PositionAdjust" unique_id=1986133904]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/PositionAdjust"]
+[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/PositionAdjust" unique_id=1452802005]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("8_6vt7t")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Label2" type="Label" parent="MainUI/LeftPanel/PositionAdjust"]
+[node name="Label2" type="Label" parent="MainUI/LeftPanel/PositionAdjust" unique_id=1179256740]
 layout_mode = 2
 text = "X:"
 
-[node name="XPosSpin" type="SpinBox" parent="MainUI/LeftPanel/PositionAdjust"]
+[node name="XPosSpin" type="SpinBox" parent="MainUI/LeftPanel/PositionAdjust" unique_id=1459184710]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.1
 allow_greater = true
 allow_lesser = true
 
-[node name="Label3" type="Label" parent="MainUI/LeftPanel/PositionAdjust"]
+[node name="Label3" type="Label" parent="MainUI/LeftPanel/PositionAdjust" unique_id=1835230137]
 layout_mode = 2
 text = "Y:"
 
-[node name="YPosSpin" type="SpinBox" parent="MainUI/LeftPanel/PositionAdjust"]
+[node name="YPosSpin" type="SpinBox" parent="MainUI/LeftPanel/PositionAdjust" unique_id=1546030818]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.1
 allow_greater = true
 allow_lesser = true
 
-[node name="Label4" type="Label" parent="MainUI/LeftPanel/PositionAdjust"]
+[node name="Label4" type="Label" parent="MainUI/LeftPanel/PositionAdjust" unique_id=293377369]
 layout_mode = 2
 text = "Z:"
 
-[node name="ZPosSpin" type="SpinBox" parent="MainUI/LeftPanel/PositionAdjust"]
+[node name="ZPosSpin" type="SpinBox" parent="MainUI/LeftPanel/PositionAdjust" unique_id=1150362618]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.1
 allow_greater = true
 allow_lesser = true
 
-[node name="Label8" type="Label" parent="MainUI/LeftPanel/PositionAdjust"]
+[node name="Label8" type="Label" parent="MainUI/LeftPanel/PositionAdjust" unique_id=2137736811]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[node name="PosResetButton" type="Button" parent="MainUI/LeftPanel/PositionAdjust"]
+[node name="PosResetButton" type="Button" parent="MainUI/LeftPanel/PositionAdjust" unique_id=480829979]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -569,61 +569,61 @@ tooltip_text = "Reset position adjustments"
 icon = ExtResource("9_ilx0h")
 expand_icon = true
 
-[node name="RotationAdjust" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="RotationAdjust" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=1385029980]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label5" type="Label" parent="MainUI/LeftPanel/RotationAdjust"]
+[node name="Label5" type="Label" parent="MainUI/LeftPanel/RotationAdjust" unique_id=1085547100]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/RotationAdjust"]
+[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/RotationAdjust" unique_id=1034230142]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("10_x1hdl")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Label2" type="Label" parent="MainUI/LeftPanel/RotationAdjust"]
+[node name="Label2" type="Label" parent="MainUI/LeftPanel/RotationAdjust" unique_id=857723469]
 layout_mode = 2
 text = "X:"
 
-[node name="XRotSpin" type="SpinBox" parent="MainUI/LeftPanel/RotationAdjust"]
+[node name="XRotSpin" type="SpinBox" parent="MainUI/LeftPanel/RotationAdjust" unique_id=2089004431]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.1
 allow_greater = true
 allow_lesser = true
 
-[node name="Label3" type="Label" parent="MainUI/LeftPanel/RotationAdjust"]
+[node name="Label3" type="Label" parent="MainUI/LeftPanel/RotationAdjust" unique_id=230433050]
 layout_mode = 2
 text = "Y:"
 
-[node name="YRotSpin" type="SpinBox" parent="MainUI/LeftPanel/RotationAdjust"]
+[node name="YRotSpin" type="SpinBox" parent="MainUI/LeftPanel/RotationAdjust" unique_id=1982420875]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.1
 allow_greater = true
 allow_lesser = true
 
-[node name="Label4" type="Label" parent="MainUI/LeftPanel/RotationAdjust"]
+[node name="Label4" type="Label" parent="MainUI/LeftPanel/RotationAdjust" unique_id=41989597]
 layout_mode = 2
 text = "Z:"
 
-[node name="ZRotSpin" type="SpinBox" parent="MainUI/LeftPanel/RotationAdjust"]
+[node name="ZRotSpin" type="SpinBox" parent="MainUI/LeftPanel/RotationAdjust" unique_id=570678216]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.1
 allow_greater = true
 allow_lesser = true
 
-[node name="Label6" type="Label" parent="MainUI/LeftPanel/RotationAdjust"]
+[node name="Label6" type="Label" parent="MainUI/LeftPanel/RotationAdjust" unique_id=1651474045]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[node name="RotResetButton" type="Button" parent="MainUI/LeftPanel/RotationAdjust"]
+[node name="RotResetButton" type="Button" parent="MainUI/LeftPanel/RotationAdjust" unique_id=873909938]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -631,15 +631,15 @@ tooltip_text = "Reset rotation adjustments"
 icon = ExtResource("9_ilx0h")
 expand_icon = true
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=766628712]
 layout_mode = 2
 
-[node name="Label6" type="Label" parent="MainUI/LeftPanel/HBoxContainer2"]
+[node name="Label6" type="Label" parent="MainUI/LeftPanel/HBoxContainer2" unique_id=1932355130]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[node name="Button_Up" type="Button" parent="MainUI/LeftPanel/HBoxContainer2"]
+[node name="Button_Up" type="Button" parent="MainUI/LeftPanel/HBoxContainer2" unique_id=699003477]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -647,7 +647,7 @@ icon = ExtResource("7_klpv1")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button_Down" type="Button" parent="MainUI/LeftPanel/HBoxContainer2"]
+[node name="Button_Down" type="Button" parent="MainUI/LeftPanel/HBoxContainer2" unique_id=1006002236]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -655,7 +655,7 @@ icon = ExtResource("8_75uvr")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button_Left" type="Button" parent="MainUI/LeftPanel/HBoxContainer2"]
+[node name="Button_Left" type="Button" parent="MainUI/LeftPanel/HBoxContainer2" unique_id=915073987]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -663,7 +663,7 @@ icon = ExtResource("9_lbuph")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button_Right" type="Button" parent="MainUI/LeftPanel/HBoxContainer2"]
+[node name="Button_Right" type="Button" parent="MainUI/LeftPanel/HBoxContainer2" unique_id=179168019]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -671,31 +671,31 @@ icon = ExtResource("10_3lf5q")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer2"]
+[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer2" unique_id=1403983702]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/HBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/HBoxContainer2" unique_id=136834465]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("11_5xf31")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="CameraZoomSpin" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer2"]
+[node name="CameraZoomSpin" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer2" unique_id=671505826]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.1
 value = 4.0
 allow_greater = true
 
-[node name="Label7" type="Label" parent="MainUI/LeftPanel/HBoxContainer2"]
+[node name="Label7" type="Label" parent="MainUI/LeftPanel/HBoxContainer2" unique_id=2066317079]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[node name="ZoomResetButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer2"]
+[node name="ZoomResetButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer2" unique_id=1956778232]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -703,10 +703,10 @@ tooltip_text = "Reset scale adjustment"
 icon = ExtResource("9_ilx0h")
 expand_icon = true
 
-[node name="HSeparator5" type="HSeparator" parent="MainUI/LeftPanel"]
+[node name="HSeparator5" type="HSeparator" parent="MainUI/LeftPanel" unique_id=762421869]
 layout_mode = 2
 
-[node name="Lighting" type="Label" parent="MainUI/LeftPanel"]
+[node name="Lighting" type="Label" parent="MainUI/LeftPanel" unique_id=162246155]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_l23g4")
@@ -715,59 +715,59 @@ horizontal_alignment = 1
 vertical_alignment = 2
 script = ExtResource("18_ilx0h")
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=142936891]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainUI/LeftPanel/HBoxContainer4"]
+[node name="Label" type="Label" parent="MainUI/LeftPanel/HBoxContainer4" unique_id=209263439]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="KeyLightCheckButton" type="CheckButton" parent="MainUI/LeftPanel/HBoxContainer4"]
+[node name="KeyLightCheckButton" type="CheckButton" parent="MainUI/LeftPanel/HBoxContainer4" unique_id=1932778077]
 unique_name_in_owner = true
 layout_mode = 2
 text = " KEY LIGHT"
 
-[node name="Label2" type="Label" parent="MainUI/LeftPanel/HBoxContainer4"]
+[node name="Label2" type="Label" parent="MainUI/LeftPanel/HBoxContainer4" unique_id=401863908]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="KeyLightSpinBox" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer4"]
+[node name="KeyLightSpinBox" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer4" unique_id=2112239182]
 unique_name_in_owner = true
 layout_mode = 2
 allow_greater = true
 
-[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer4"]
+[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer4" unique_id=1498192961]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="KeyLightColorPickerButton" type="ColorPickerButton" parent="MainUI/LeftPanel/HBoxContainer4"]
+[node name="KeyLightColorPickerButton" type="ColorPickerButton" parent="MainUI/LeftPanel/HBoxContainer4" unique_id=1693516455]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 
-[node name="Label4" type="Label" parent="MainUI/LeftPanel/HBoxContainer4"]
+[node name="Label4" type="Label" parent="MainUI/LeftPanel/HBoxContainer4" unique_id=2082532699]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/HBoxContainer4"]
+[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/HBoxContainer4" unique_id=682412270]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("10_x1hdl")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="KeyLightRotSpin" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer4"]
+[node name="KeyLightRotSpin" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer4" unique_id=154490267]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.1
 allow_greater = true
 allow_lesser = true
 
-[node name="Label3" type="Label" parent="MainUI/LeftPanel/HBoxContainer4"]
+[node name="Label3" type="Label" parent="MainUI/LeftPanel/HBoxContainer4" unique_id=931926112]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="KeyLightResetButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer4"]
+[node name="KeyLightResetButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer4" unique_id=527146369]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -775,59 +775,59 @@ tooltip_text = "Reset Key light"
 icon = ExtResource("9_ilx0h")
 expand_icon = true
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="HBoxContainer6" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=599059215]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainUI/LeftPanel/HBoxContainer6"]
+[node name="Label" type="Label" parent="MainUI/LeftPanel/HBoxContainer6" unique_id=347738235]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="FillLightCheckButton" type="CheckButton" parent="MainUI/LeftPanel/HBoxContainer6"]
+[node name="FillLightCheckButton" type="CheckButton" parent="MainUI/LeftPanel/HBoxContainer6" unique_id=1719986273]
 unique_name_in_owner = true
 layout_mode = 2
 text = "FILL LIGHT"
 
-[node name="Label2" type="Label" parent="MainUI/LeftPanel/HBoxContainer6"]
+[node name="Label2" type="Label" parent="MainUI/LeftPanel/HBoxContainer6" unique_id=1281168593]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="FillLightSpinBox" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer6"]
+[node name="FillLightSpinBox" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer6" unique_id=497522426]
 unique_name_in_owner = true
 layout_mode = 2
 allow_greater = true
 
-[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer6"]
+[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer6" unique_id=1693457342]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="FillLightColorPickerButton" type="ColorPickerButton" parent="MainUI/LeftPanel/HBoxContainer6"]
+[node name="FillLightColorPickerButton" type="ColorPickerButton" parent="MainUI/LeftPanel/HBoxContainer6" unique_id=11804419]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 
-[node name="Label4" type="Label" parent="MainUI/LeftPanel/HBoxContainer6"]
+[node name="Label4" type="Label" parent="MainUI/LeftPanel/HBoxContainer6" unique_id=478623451]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/HBoxContainer6"]
+[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/HBoxContainer6" unique_id=802416816]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("10_x1hdl")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="FillLightRotSpin" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer6"]
+[node name="FillLightRotSpin" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer6" unique_id=2076513469]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.1
 allow_greater = true
 allow_lesser = true
 
-[node name="Label3" type="Label" parent="MainUI/LeftPanel/HBoxContainer6"]
+[node name="Label3" type="Label" parent="MainUI/LeftPanel/HBoxContainer6" unique_id=1710192186]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="FillLightResetButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer6"]
+[node name="FillLightResetButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer6" unique_id=915480861]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -835,59 +835,59 @@ tooltip_text = "Reset Fill light"
 icon = ExtResource("9_ilx0h")
 expand_icon = true
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="HBoxContainer8" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=1324681555]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainUI/LeftPanel/HBoxContainer8"]
+[node name="Label" type="Label" parent="MainUI/LeftPanel/HBoxContainer8" unique_id=2009955793]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RimLightCheckButton" type="CheckButton" parent="MainUI/LeftPanel/HBoxContainer8"]
+[node name="RimLightCheckButton" type="CheckButton" parent="MainUI/LeftPanel/HBoxContainer8" unique_id=563586881]
 unique_name_in_owner = true
 layout_mode = 2
 text = " RIM LIGHT"
 
-[node name="Label2" type="Label" parent="MainUI/LeftPanel/HBoxContainer8"]
+[node name="Label2" type="Label" parent="MainUI/LeftPanel/HBoxContainer8" unique_id=1063412618]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RimLightSpinBox" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer8"]
+[node name="RimLightSpinBox" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer8" unique_id=308354605]
 unique_name_in_owner = true
 layout_mode = 2
 allow_greater = true
 
-[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer8"]
+[node name="Label5" type="Label" parent="MainUI/LeftPanel/HBoxContainer8" unique_id=1285099999]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RimLightColorPickerButton" type="ColorPickerButton" parent="MainUI/LeftPanel/HBoxContainer8"]
+[node name="RimLightColorPickerButton" type="ColorPickerButton" parent="MainUI/LeftPanel/HBoxContainer8" unique_id=1061470031]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 
-[node name="Label4" type="Label" parent="MainUI/LeftPanel/HBoxContainer8"]
+[node name="Label4" type="Label" parent="MainUI/LeftPanel/HBoxContainer8" unique_id=1332602352]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/HBoxContainer8"]
+[node name="TextureRect" type="TextureRect" parent="MainUI/LeftPanel/HBoxContainer8" unique_id=866589319]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("10_x1hdl")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="RimLightRotSpin" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer8"]
+[node name="RimLightRotSpin" type="SpinBox" parent="MainUI/LeftPanel/HBoxContainer8" unique_id=1980321880]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.1
 allow_greater = true
 allow_lesser = true
 
-[node name="Label3" type="Label" parent="MainUI/LeftPanel/HBoxContainer8"]
+[node name="Label3" type="Label" parent="MainUI/LeftPanel/HBoxContainer8" unique_id=1989375157]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RimLightResetButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer8"]
+[node name="RimLightResetButton" type="Button" parent="MainUI/LeftPanel/HBoxContainer8" unique_id=423405193]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
@@ -895,20 +895,20 @@ tooltip_text = "Reset Rim light"
 icon = ExtResource("9_ilx0h")
 expand_icon = true
 
-[node name="HSeparator6" type="HSeparator" parent="MainUI/LeftPanel"]
+[node name="HSeparator6" type="HSeparator" parent="MainUI/LeftPanel" unique_id=578279170]
 layout_mode = 2
 
-[node name="Gizmo" type="HBoxContainer" parent="MainUI/LeftPanel"]
+[node name="Gizmo" type="HBoxContainer" parent="MainUI/LeftPanel" unique_id=1064593794]
 layout_mode = 2
 theme_override_constants/separation = 20
 script = ExtResource("19_ilx0h")
 
-[node name="Label7" type="Label" parent="MainUI/LeftPanel/Gizmo"]
+[node name="Label7" type="Label" parent="MainUI/LeftPanel/Gizmo" unique_id=116238733]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[node name="Button_Axis" type="Button" parent="MainUI/LeftPanel/Gizmo"]
+[node name="Button_Axis" type="Button" parent="MainUI/LeftPanel/Gizmo" unique_id=1930493539]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 40)
 layout_mode = 2
@@ -916,7 +916,7 @@ text = "AXIS"
 icon = ExtResource("14_ilx0h")
 expand_icon = true
 
-[node name="Button_Origin" type="Button" parent="MainUI/LeftPanel/Gizmo"]
+[node name="Button_Origin" type="Button" parent="MainUI/LeftPanel/Gizmo" unique_id=1685737281]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 40)
 layout_mode = 2
@@ -924,7 +924,7 @@ text = "ORIGIN"
 icon = ExtResource("15_x1hdl")
 expand_icon = true
 
-[node name="Button_Floor" type="Button" parent="MainUI/LeftPanel/Gizmo"]
+[node name="Button_Floor" type="Button" parent="MainUI/LeftPanel/Gizmo" unique_id=1418932166]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 40)
 layout_mode = 2
@@ -932,31 +932,31 @@ text = "FLOOR"
 icon = ExtResource("16_5xf31")
 expand_icon = true
 
-[node name="FloorColorPicker" type="ColorPickerButton" parent="MainUI/LeftPanel/Gizmo"]
+[node name="FloorColorPicker" type="ColorPickerButton" parent="MainUI/LeftPanel/Gizmo" unique_id=661240675]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 color = Color(1, 1, 1, 1)
 
-[node name="Label8" type="Label" parent="MainUI/LeftPanel/Gizmo"]
+[node name="Label8" type="Label" parent="MainUI/LeftPanel/Gizmo" unique_id=646390562]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[node name="Renderer" type="VBoxContainer" parent="MainUI"]
+[node name="Renderer" type="VBoxContainer" parent="MainUI" unique_id=1152325193]
 layout_mode = 2
 
-[node name="Renderer" type="PanelContainer" parent="MainUI/Renderer"]
+[node name="Renderer" type="PanelContainer" parent="MainUI/Renderer" unique_id=801845153]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tkbio")
 
-[node name="BgColorRect" type="ColorRect" parent="MainUI/Renderer/Renderer"]
+[node name="BgColorRect" type="ColorRect" parent="MainUI/Renderer/Renderer" unique_id=1019535858]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="PixelCanvas" type="TextureRect" parent="MainUI/Renderer/Renderer"]
+[node name="PixelCanvas" type="TextureRect" parent="MainUI/Renderer/Renderer" unique_id=1870599873]
 unique_name_in_owner = true
 texture_filter = 1
 material = ExtResource("3_v52r1")
@@ -964,7 +964,7 @@ layout_mode = 2
 texture = SubResource("ViewportTexture_tkbio")
 metadata/_edit_lock_ = true
 
-[node name="CanvasSizeLabel" type="Label" parent="MainUI/Renderer"]
+[node name="CanvasSizeLabel" type="Label" parent="MainUI/Renderer" unique_id=64494789]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.479183, 0.479183, 0.479183, 1)
@@ -972,12 +972,12 @@ theme_override_font_sizes/font_size = 16
 text = "Canvas size: 512 px"
 horizontal_alignment = 2
 
-[node name="Console" type="HBoxContainer" parent="MainUI/Renderer"]
+[node name="Console" type="HBoxContainer" parent="MainUI/Renderer" unique_id=365053506]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="Console" type="TextEdit" parent="MainUI/Renderer/Console"]
+[node name="Console" type="TextEdit" parent="MainUI/Renderer/Console" unique_id=1425085111]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -989,26 +989,26 @@ shortcut_keys_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 empty_selection_clipboard_enabled = false
 wrap_mode = 1
 indent_wrapped_lines = true
+virtual_keyboard_enabled = false
 scroll_smooth = true
 
-[node name="UI_Controls" type="VBoxContainer" parent="MainUI"]
+[node name="UI_Controls" type="VBoxContainer" parent="MainUI" unique_id=2044885333]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MainUI/UI_Controls"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MainUI/UI_Controls" unique_id=611104926]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainUI/UI_Controls/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI/UI_Controls/ScrollContainer" unique_id=1789923115]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=66978553]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1017,42 +1017,42 @@ text = "PRESET CONFIG"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="PresetSelector" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PresetSelector" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=570330535]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="PresetOptionButton" type="OptionButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PresetSelector"]
+[node name="PresetOptionButton" type="OptionButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PresetSelector" unique_id=945856036]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 clip_text = true
 fit_to_longest_item = false
 
-[node name="SearchTextLineEdit" type="LineEdit" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PresetSelector"]
+[node name="SearchTextLineEdit" type="LineEdit" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PresetSelector" unique_id=1729650626]
 unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 placeholder_text = "search "
 
-[node name="SavePresetButton" type="Button" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PresetSelector"]
+[node name="SavePresetButton" type="Button" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PresetSelector" unique_id=1303290402]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 icon = ExtResource("22_6vt7t")
 expand_icon = true
 
-[node name="DeletePresetButton" type="Button" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PresetSelector"]
+[node name="DeletePresetButton" type="Button" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PresetSelector" unique_id=519438285]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 icon = ExtResource("23_ilx0h")
 expand_icon = true
 
-[node name="HSeparator7" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="HSeparator7" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1828387904]
 layout_mode = 2
 
-[node name="Label4" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="Label4" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1400193747]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1061,48 +1061,48 @@ text = "COLOR ADJUSTMENTS"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Panel" type="Panel" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=79963891]
 layout_mode = 2
 
-[node name="PixelAdjust1" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust1" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=242110909]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust1"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust1" unique_id=1786054515]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Color steps:"
 horizontal_alignment = 2
 
-[node name="ColorStepsSpin" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust1"]
+[node name="ColorStepsSpin" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust1" unique_id=530285819]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 value = 8.0
 allow_greater = true
 
-[node name="Label2" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust1"]
+[node name="Label2" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust1" unique_id=2066329715]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ResetMaterialButton" type="Button" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust1"]
+[node name="ResetMaterialButton" type="Button" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust1" unique_id=1621128267]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 icon = ExtResource("9_ilx0h")
 expand_icon = true
 
-[node name="PixelAdjust2" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust2" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1557381894]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust2"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust2" unique_id=1658211449]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Edge strength:"
 horizontal_alignment = 2
 
-[node name="EdgeStrengthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust2"]
+[node name="EdgeStrengthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust2" unique_id=1479505838]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1111,17 +1111,17 @@ size_flags_vertical = 4
 max_value = 5.0
 step = 0.5
 
-[node name="PixelAdjust3" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust3" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1694955341]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust3"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust3" unique_id=443436225]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Sharpness:"
 horizontal_alignment = 2
 
-[node name="SharpnessSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust3"]
+[node name="SharpnessSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust3" unique_id=2111464717]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1130,17 +1130,17 @@ size_flags_vertical = 4
 max_value = 5.0
 step = 0.1
 
-[node name="PixelAdjust4" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust4" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=561450791]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust4"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust4" unique_id=1115166924]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Hue shift:"
 horizontal_alignment = 2
 
-[node name="HueShiftSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust4"]
+[node name="HueShiftSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust4" unique_id=248591796]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1149,17 +1149,17 @@ size_flags_vertical = 4
 min_value = -180.0
 max_value = 180.0
 
-[node name="PixelAdjust5" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust5" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1348215969]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust5"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust5" unique_id=1192554552]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Saturation:"
 horizontal_alignment = 2
 
-[node name="SaturationSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust5"]
+[node name="SaturationSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust5" unique_id=1391910169]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1169,17 +1169,17 @@ max_value = 2.0
 step = 0.1
 value = 1.0
 
-[node name="PixelAdjust6" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust6" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=244847624]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust6"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust6" unique_id=363081356]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Value:"
 horizontal_alignment = 2
 
-[node name="ValueSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust6"]
+[node name="ValueSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust6" unique_id=101749513]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1189,17 +1189,17 @@ max_value = 2.0
 step = 0.1
 value = 1.0
 
-[node name="PixelAdjust7" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust7" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=2040291370]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust7"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust7" unique_id=128150806]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Contrast:"
 horizontal_alignment = 2
 
-[node name="ContrastSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust7"]
+[node name="ContrastSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust7" unique_id=542738975]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1209,17 +1209,17 @@ max_value = 5.0
 step = 0.1
 value = 1.0
 
-[node name="PixelAdjust8" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust8" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1982114476]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust8"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust8" unique_id=1830489784]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Gamma:"
 horizontal_alignment = 2
 
-[node name="GammaSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust8"]
+[node name="GammaSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust8" unique_id=1058829340]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1229,17 +1229,17 @@ max_value = 5.0
 step = 0.1
 value = 1.0
 
-[node name="PixelAdjust9" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust9" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=525142001]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust9"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust9" unique_id=1030971103]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Brightness:"
 horizontal_alignment = 2
 
-[node name="BrightnessSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust9"]
+[node name="BrightnessSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust9" unique_id=469545379]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1249,62 +1249,62 @@ min_value = -1.0
 max_value = 1.0
 step = 0.1
 
-[node name="PixelAdjust10" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust10" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1036682322]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust10"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust10" unique_id=1206037959]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Outline:"
 horizontal_alignment = 2
 
-[node name="OutlineSpinBox" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust10"]
+[node name="OutlineSpinBox" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust10" unique_id=661867030]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="OutlineColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust10"]
+[node name="OutlineColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust10" unique_id=632889288]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 
-[node name="PixelAdjust11" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust11" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=2076113397]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11" unique_id=1622372139]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Post-Process :"
 horizontal_alignment = 2
 
-[node name="PostProcessOutline" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11"]
+[node name="PostProcessOutline" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11" unique_id=1279064898]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ShadowStrengthColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11"]
+[node name="ShadowStrengthColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11" unique_id=1849133052]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 edit_intensity = false
 
-[node name="HighlightStrengthColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11"]
+[node name="HighlightStrengthColorPicker" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust11" unique_id=510948126]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 color = Color(1, 1, 1, 1)
 
-[node name="PixelAdjust17" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust17" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1864082697]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17" unique_id=2033029117]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Shadow:"
 horizontal_alignment = 2
 
-[node name="ShadowStrengthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17"]
+[node name="ShadowStrengthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17" unique_id=2141848808]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1314,17 +1314,17 @@ max_value = 0.9900000000052388
 step = 0.1
 value = 0.4
 
-[node name="PixelAdjust18" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust18" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1634515047]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=134918301]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Highlight:"
 horizontal_alignment = 2
 
-[node name="HighlightStrengthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18"]
+[node name="HighlightStrengthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=1929206572]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1334,10 +1334,10 @@ max_value = 1.0
 step = 0.1
 value = 0.1
 
-[node name="HSeparator10" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="HSeparator10" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1727341175]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1075154474]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1346,17 +1346,17 @@ text = "DITHERING"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="PixelAdjust12" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust12" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1455046008]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust12"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust12" unique_id=491645193]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Amount:"
 horizontal_alignment = 2
 
-[node name="DitherAmountSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust12"]
+[node name="DitherAmountSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust12" unique_id=800251373]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1364,17 +1364,17 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 step = 0.01
 
-[node name="PixelAdjust13" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust13" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1209482677]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust13"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust13" unique_id=1129960731]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Blend:"
 horizontal_alignment = 2
 
-[node name="DitherBlendSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust13"]
+[node name="DitherBlendSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust13" unique_id=1728861380]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1382,17 +1382,17 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 step = 0.01
 
-[node name="PixelAdjust14" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust14" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=2140868725]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust14"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust14" unique_id=2133583034]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Threshold:"
 horizontal_alignment = 2
 
-[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust14"]
+[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust14" unique_id=246550096]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -1400,54 +1400,54 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 step = 0.01
 
-[node name="PixelAdjust15" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust15" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1730673473]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust15"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust15" unique_id=1149170234]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Sensitivity:"
 horizontal_alignment = 2
 
-[node name="DitherSensitivitySlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust15"]
+[node name="DitherSensitivitySlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust15" unique_id=1947026127]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="PixelAdjust16" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="PixelAdjust16" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1728775126]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust16"]
+[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust16" unique_id=1439339392]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 text = "Dot size"
 horizontal_alignment = 2
 
-[node name="DitherDotSizeSpin" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust16"]
+[node name="DitherDotSizeSpin" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust16" unique_id=747195794]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.1
 value = 1.0
 
-[node name="DitherDotColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust16"]
+[node name="DitherDotColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust16" unique_id=66143953]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 
-[node name="HSeparator9" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="HSeparator9" type="HSeparator" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1768229348]
 layout_mode = 2
 
-[node name="Panel2" type="Panel" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer"]
+[node name="Panel2" type="Panel" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1497517027]
 custom_minimum_size = Vector2(200, 250)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_x1hdl")
 
-[node name="TextureRect" type="TextureRect" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/Panel2"]
+[node name="TextureRect" type="TextureRect" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/Panel2" unique_id=920038275]
 clip_contents = true
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 1
@@ -1462,10 +1462,10 @@ texture = SubResource("ViewportTexture_6vt7t")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI" unique_id=609893450]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainUI/VBoxContainer"]
+[node name="Label" type="Label" parent="MainUI/VBoxContainer" unique_id=1622718154]
 custom_minimum_size = Vector2(112, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1474,7 +1474,7 @@ text = "COLORS"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="UsePaletteCheckButton" type="CheckButton" parent="MainUI/VBoxContainer"]
+[node name="UsePaletteCheckButton" type="CheckButton" parent="MainUI/VBoxContainer" unique_id=165870376]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
@@ -1484,1674 +1484,1678 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_6vt7t")
 text = " REMAP"
 alignment = 1
 
-[node name="ColorPresetOptionButton" type="OptionButton" parent="MainUI/VBoxContainer"]
+[node name="ColorPresetOptionButton" type="OptionButton" parent="MainUI/VBoxContainer" unique_id=1313539142]
 unique_name_in_owner = true
 layout_mode = 2
 clip_text = true
 fit_to_longest_item = false
 
-[node name="SampleColorsButton" type="Button" parent="MainUI/VBoxContainer"]
+[node name="SampleColorsButton" type="Button" parent="MainUI/VBoxContainer" unique_id=1816387407]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "SAMPLE"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MainUI/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MainUI/VBoxContainer" unique_id=2058194467]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainUI/VBoxContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI/VBoxContainer/ScrollContainer" unique_id=820689110]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="UsePaletteColor1" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor1" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1837997021]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor2" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor2" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1064336893]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor3" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor3" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1447623690]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor4" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor4" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1780468354]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor5" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor5" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=667919815]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor6" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor6" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2111397826]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor7" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor7" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=647969373]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor8" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor8" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=58024004]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor9" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor9" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1495661852]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor10" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor10" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1907394083]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor11" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor11" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=805327533]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor12" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor12" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=991039298]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor13" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor13" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=15130951]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor14" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor14" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=602503084]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor15" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor15" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=333214082]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor16" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor16" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=370089286]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor17" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor17" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=725046759]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor18" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor18" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=378597451]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor19" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor19" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=246873221]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor20" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor20" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1939060489]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor21" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor21" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=752423695]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor22" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor22" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=679001330]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor23" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor23" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1445340714]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor24" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor24" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1806711759]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor25" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor25" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1479341300]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor26" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor26" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1975233116]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor27" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor27" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=760343263]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor28" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor28" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1487001124]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor29" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor29" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1561457477]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor30" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor30" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=722102060]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor31" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor31" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1000137388]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor32" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor32" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=140526015]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor33" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor33" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1717378439]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor34" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor34" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1545304284]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor35" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor35" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=626191595]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor36" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor36" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=622188462]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor37" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor37" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=798813805]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor38" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor38" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=709480412]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor39" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor39" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=644953924]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor40" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor40" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=155447211]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor41" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor41" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1858847919]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor42" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor42" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2052015410]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor43" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor43" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=8295570]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor44" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor44" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=539596890]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor45" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor45" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=752656574]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor46" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor46" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=51366250]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor47" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor47" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1247924619]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor48" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor48" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1689273269]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor49" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor49" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1283443044]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor50" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor50" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1015734793]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor51" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor51" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1827134258]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor52" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor52" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=770482140]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor53" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor53" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=357422808]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor54" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor54" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=177811518]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor55" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor55" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1992302449]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor56" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor56" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=420777344]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor57" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor57" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=353421518]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor58" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor58" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1732630526]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor59" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor59" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=435139226]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor60" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor60" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1054921675]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor61" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor61" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=181794817]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor62" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor62" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=693689444]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor63" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor63" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1631624864]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor64" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor64" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1986301918]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor65" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor65" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1487666482]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor66" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor66" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1954892991]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor67" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor67" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1444117728]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor68" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor68" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2058969447]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor69" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor69" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=433950466]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor70" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor70" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=151253271]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor71" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor71" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1058620551]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor72" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor72" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1014431050]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor73" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor73" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1951471712]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor74" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor74" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=258598481]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor75" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor75" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1994619814]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor76" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor76" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=823657146]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor77" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor77" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2041100123]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor78" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor78" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1438286032]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor79" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor79" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1603875921]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor80" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor80" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1083559916]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor81" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor81" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=50701958]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor82" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor82" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=646337255]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor83" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor83" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=233389999]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor84" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor84" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1419257329]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor85" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor85" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=307823443]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor86" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor86" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1031403855]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor87" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor87" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1400740292]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor88" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor88" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=915639965]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor89" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor89" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=163066953]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor90" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor90" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1586427229]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor91" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor91" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1400192635]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor92" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor92" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=371802908]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor93" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor93" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1771591348]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor94" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor94" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1098911953]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor95" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor95" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=625085620]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor96" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor96" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1645366596]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor97" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor97" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=135216050]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor98" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor98" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=958936491]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor99" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor99" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1767600075]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor100" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor100" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2011141280]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor101" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor101" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1522796706]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor102" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor102" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=394923521]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor103" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor103" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2010721817]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor104" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor104" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1129378188]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor105" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor105" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1131078224]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor106" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor106" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1109382827]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor107" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor107" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=759127957]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor108" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor108" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1611972843]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor109" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor109" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=211625455]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor110" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor110" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1738336993]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor111" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor111" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=307658732]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor112" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor112" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1273743264]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor113" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor113" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1904526508]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor114" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor114" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=197654837]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor115" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor115" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=576657283]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor116" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor116" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2106334564]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor117" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor117" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1369788585]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor118" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor118" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=553543358]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor119" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor119" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=631351866]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor120" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor120" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1474737337]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor121" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor121" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=870126210]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor122" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor122" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1316923615]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor123" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor123" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=723164166]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor124" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor124" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1659934670]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor125" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor125" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1928115744]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor126" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor126" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=335174511]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor127" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor127" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1727363130]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor128" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor128" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=605775042]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor129" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor129" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1779029116]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor130" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor130" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2129962855]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor131" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor131" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=298640250]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor132" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor132" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=34815425]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor133" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor133" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1937103675]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor134" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor134" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=274197720]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor135" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor135" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1617192614]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor136" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor136" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1309943037]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor137" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor137" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=805706878]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor138" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor138" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=193247537]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor139" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor139" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=596615258]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor140" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor140" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1747249044]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor141" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor141" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=679896800]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor142" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor142" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=92208189]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor143" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor143" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1633631725]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor144" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor144" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1209865580]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor145" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor145" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=359073801]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor146" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor146" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1090750534]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor147" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor147" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=506401180]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor148" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor148" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2082208278]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor149" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor149" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1544456758]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor150" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor150" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=371010354]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor151" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor151" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=717680119]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor152" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor152" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1273483214]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor153" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor153" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=982887468]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor154" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor154" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1264495460]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor155" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor155" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1196079783]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor156" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor156" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1926077172]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor157" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor157" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=907308766]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor158" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor158" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1389988984]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor159" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor159" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1576459890]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor160" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor160" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=705469944]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor161" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor161" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1892796208]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor162" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor162" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=37792968]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor163" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor163" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=627707187]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor164" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor164" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1404689971]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor165" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor165" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=503003221]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor166" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor166" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1448373297]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor167" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor167" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1399900056]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor168" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor168" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1414233117]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor169" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor169" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1336245850]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor170" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor170" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=752257568]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor171" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor171" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=787394371]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor172" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor172" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1681464263]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor173" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor173" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1512811146]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor174" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor174" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=963058293]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor175" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor175" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1823416550]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor176" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor176" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=501071192]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor177" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor177" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=773688813]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor178" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor178" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2087114931]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor179" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor179" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1775484602]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor180" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor180" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1493522941]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor181" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor181" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1191774874]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor182" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor182" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1582528806]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor183" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor183" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1339473740]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor184" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor184" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1472471849]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor185" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor185" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=994032334]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor186" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor186" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1565251429]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor187" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor187" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1523550305]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor188" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor188" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1811514764]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor189" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor189" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=814571940]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor190" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor190" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1012249828]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor191" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor191" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1094230502]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor192" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor192" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1526133996]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor193" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor193" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=152754738]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor194" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor194" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1379234666]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor195" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor195" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=458209915]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor196" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor196" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1635941067]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor197" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor197" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=482405491]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor198" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor198" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1019230042]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor199" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor199" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1695603145]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor200" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor200" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=84318153]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor201" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor201" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=467934532]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor202" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor202" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1061583943]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor203" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor203" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1838415450]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor204" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor204" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1920467264]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor205" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor205" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1821135844]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor206" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor206" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1667615166]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor207" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor207" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=923777541]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor208" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor208" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2001983802]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor209" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor209" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=771258225]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor210" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor210" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2088519596]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor211" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor211" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=268405745]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor212" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor212" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=205159005]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor213" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor213" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1516940556]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor214" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor214" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1769946973]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor215" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor215" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1823064171]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor216" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor216" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1308954323]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor217" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor217" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1725004371]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor218" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor218" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=142453524]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor219" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor219" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1927014830]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor220" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor220" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=838991443]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor221" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor221" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=858336313]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor222" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor222" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=819138572]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor223" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor223" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=360852228]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor224" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor224" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2034918587]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor225" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor225" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1107919651]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor226" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor226" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=545025847]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor227" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor227" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=430399643]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor228" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor228" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1851269435]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor229" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor229" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=506997876]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor230" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor230" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1984509998]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor231" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor231" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1096667453]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor232" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor232" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2020180120]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor233" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor233" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=489277179]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor234" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor234" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=292102016]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor235" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor235" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1560413877]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor236" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor236" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=363701951]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor237" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor237" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1088888922]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor238" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor238" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1499989063]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor239" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor239" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1942476345]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor240" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor240" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=51276442]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor241" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor241" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=61017543]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor242" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor242" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=88941630]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor243" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor243" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1244730675]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor244" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor244" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=427695781]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor245" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor245" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1234017333]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor246" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor246" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1450548790]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor247" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor247" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=36252676]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor248" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor248" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=642634854]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor249" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor249" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=689628157]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor250" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor250" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=363287202]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor251" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor251" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1647606431]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor252" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor252" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=518583716]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor253" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor253" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=180129240]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor254" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor254" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1082885517]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor255" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor255" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=982752814]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UsePaletteColor256" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="UsePaletteColor256" type="ColorPickerButton" parent="MainUI/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1974084503]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="MainUI"]
+[node name="Panel" type="Panel" parent="MainUI" unique_id=1378018041]
 layout_mode = 2
 
-[node name="ModelsHandler" type="Node3D" parent="."]
+[node name="ModelsHandler" type="Node3D" parent="." unique_id=1052353373]
 script = ExtResource("11_8egxh")
 
-[node name="ModelsSpawner" type="Node3D" parent="ModelsHandler"]
+[node name="ModelsSpawner" type="Node3D" parent="ModelsHandler" unique_id=1702999354]
 unique_name_in_owner = true
 script = ExtResource("22_t0cwl")
 
-[node name="TempModel" type="Node3D" parent="ModelsHandler/ModelsSpawner"]
+[node name="TempModel" type="Node3D" parent="ModelsHandler/ModelsSpawner" unique_id=190749794]
 unique_name_in_owner = true
 
-[node name="Skeleton_Minion" parent="ModelsHandler/ModelsSpawner/TempModel" instance=ExtResource("27_wwtbg")]
+[node name="Skeleton_Minion" parent="ModelsHandler/ModelsSpawner/TempModel" unique_id=372747846 instance=ExtResource("27_wwtbg")]
 
-[node name="Skeleton3D" parent="ModelsHandler/ModelsSpawner/TempModel/Skeleton_Minion/Rig" index="0"]
-bones/1/position = Vector3(0, 0.392064, 0)
-bones/1/rotation = Quaternion(-1.11123e-10, 0.0431578, 2.57241e-09, 0.999068)
-bones/2/rotation = Quaternion(-6.93889e-18, 7.10543e-15, 4.93038e-32, 1)
-bones/3/rotation = Quaternion(8.27181e-25, 3.72529e-09, -2.75506e-40, 1)
-bones/3/scale = Vector3(1, 1, 1)
-bones/4/position = Vector3(0.212007, 0.134132, 7.92996e-08)
-bones/4/rotation = Quaternion(-0.559906, -0.0608803, -0.643974, 0.517779)
-bones/4/scale = Vector3(0.999999, 0.999999, 1)
-bones/5/rotation = Quaternion(3.65498e-08, -4.88301e-08, -0.494719, 0.869053)
-bones/5/scale = Vector3(1, 0.999999, 1)
-bones/6/rotation = Quaternion(1.44633e-08, 1.26672e-08, 0.0266581, 0.999645)
-bones/6/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(-0.321065, -0.325319, 0.145726, 0.87741)
-bones/7/scale = Vector3(1, 1, 1)
-bones/8/position = Vector3(8.34843e-10, 0.0961252, -0.0575)
-bones/8/rotation = Quaternion(-3.6586e-09, 6.87811e-09, -0.707107, 0.707107)
-bones/8/scale = Vector3(1, 1, 1)
-bones/9/position = Vector3(-0.212007, 0.134132, 8.6814e-08)
-bones/9/rotation = Quaternion(-0.618244, 0.0807287, 0.618012, 0.478873)
-bones/9/scale = Vector3(0.999999, 0.999999, 1)
-bones/10/rotation = Quaternion(2.09853e-08, 5.12855e-08, 0.517939, 0.855417)
-bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(-4.94615e-10, -1.45974e-08, -0.0266581, 0.999645)
-bones/11/scale = Vector3(1, 1, 1)
-bones/12/rotation = Quaternion(-0.319291, 0.300524, -0.22735, 0.869512)
-bones/12/scale = Vector3(1, 1, 1)
-bones/13/position = Vector3(-1.5736e-08, 0.0961251, -0.0575)
-bones/13/rotation = Quaternion(-1.02444e-09, -4.24391e-09, 0.707107, 0.707107)
-bones/13/scale = Vector3(1, 1, 1)
-bones/14/rotation = Quaternion(-5.80608e-11, -0.0313417, -1.88012e-09, 0.999509)
-bones/15/position = Vector3(0.170945, 0.113587, 1.59941e-08)
-bones/15/rotation = Quaternion(0.996185, 0.0479136, 0.0566427, -0.045939)
-bones/15/scale = Vector3(1, 1, 1)
-bones/16/rotation = Quaternion(0.165014, 6.49414e-08, -1.11407e-07, 0.986291)
-bones/16/scale = Vector3(1, 1, 1)
-bones/17/rotation = Quaternion(-0.533729, -0.260895, -1.72985e-05, 0.804405)
-bones/17/scale = Vector3(1, 1, 0.999999)
-bones/18/rotation = Quaternion(0.000263472, 0.920216, -0.391412, -5.96391e-05)
-bones/18/scale = Vector3(1, 0.999997, 1)
-bones/19/position = Vector3(-0.170945, 0.113587, 1.55755e-08)
-bones/19/rotation = Quaternion(0.997322, -0.0294574, 0.0315293, 0.0590483)
-bones/19/scale = Vector3(1, 1, 1)
-bones/20/rotation = Quaternion(0.274008, -6.38135e-08, 1.92761e-07, 0.961727)
-bones/20/scale = Vector3(1, 1, 1)
-bones/21/rotation = Quaternion(-0.559039, 0.114513, -0.00862763, 0.82115)
-bones/21/scale = Vector3(1, 1, 0.999999)
-bones/22/rotation = Quaternion(-8.93489e-05, 0.920222, -0.391398, 2.0291e-05)
-bones/22/scale = Vector3(1, 0.999998, 1)
-bones/23/rotation = Quaternion(0.707107, -2.29302e-07, -4.60552e-08, 0.707107)
-bones/24/position = Vector3(0.213918, 0.0259903, 0.173866)
-bones/24/rotation = Quaternion(-0.705092, 0.0533355, 0.0533355, 0.705092)
-bones/25/rotation = Quaternion(9.65792e-09, 1.77955e-09, 0.985719, -0.168398)
-bones/26/position = Vector3(-1.11482e-08, 0.213436, -5.36347e-09)
-bones/26/rotation = Quaternion(-1.10961e-07, 0.391084, 0.920355, -2.67919e-08)
-bones/26/scale = Vector3(1, 1, 1)
-bones/27/position = Vector3(-6.31128e-09, 0.16565, -7.10267e-09)
-bones/27/scale = Vector3(1, 1, 1)
-bones/28/rotation = Quaternion(1, -8.27364e-11, 1.94627e-07, -7.45058e-09)
-bones/28/scale = Vector3(1, 1, 1)
-bones/29/rotation = Quaternion(5.55113e-17, -6.74098e-17, -1.94669e-08, 1)
-bones/30/rotation = Quaternion(0.707107, -3.82385e-08, 1.45009e-07, 0.707107)
-bones/31/rotation = Quaternion(-0.707107, -7.05285e-08, -7.05285e-08, 0.707107)
-bones/32/rotation = Quaternion(-5.83589e-09, 6.43837e-10, 0.994809, 0.101756)
-bones/33/position = Vector3(-1.11482e-08, 0.213436, -2.50942e-15)
-bones/33/rotation = Quaternion(-1.05796e-07, 0.391084, 0.920355, -2.58643e-08)
-bones/33/scale = Vector3(1, 1, 1)
-bones/34/position = Vector3(-6.31128e-09, 0.16565, 2.70695e-09)
-bones/34/rotation = Quaternion(-0.391084, -6.73931e-08, -6.22002e-08, 0.920355)
-bones/34/scale = Vector3(1, 1, 1)
-bones/35/rotation = Quaternion(1, 3.76526e-09, 1.94879e-07, 7.45058e-09)
-bones/35/scale = Vector3(1, 1, 1)
-bones/36/rotation = Quaternion(1.00614e-16, -6.74098e-17, -1.57416e-08, 1)
-bones/36/scale = Vector3(1, 1, 1)
-bones/37/rotation = Quaternion(-0.707107, -7.27951e-08, -7.27951e-08, 0.707107)
-bones/38/position = Vector3(0.520841, 0.788312, -0.0576373)
-bones/38/rotation = Quaternion(0.794627, -1.11759e-07, 0.607098, -5.96046e-08)
-bones/39/rotation = Quaternion(-0.707107, -7.27951e-08, -7.27951e-08, 0.707107)
-bones/40/position = Vector3(-0.510844, 0.788312, 0.0597369)
-bones/40/rotation = Quaternion(-0.758253, -1.52737e-07, 0.651961, -1.11759e-08)
+[node name="Skeleton3D" parent="ModelsHandler/ModelsSpawner/TempModel/Skeleton_Minion/Rig" parent_id_path=PackedInt32Array(372747846, 1766243458) index="0" unique_id=562026812]
+bones/1/position = Vector3(0, 0.39206383, 0)
+bones/1/rotation = Quaternion(-1.11122625e-10, 0.043157753, 2.5724098e-09, 0.9990683)
+bones/1/scale = Vector3(0.99999994, 1, 0.99999994)
+bones/2/rotation = Quaternion(-6.938893e-18, 7.1054274e-15, 4.93038e-32, 1)
+bones/2/scale = Vector3(1.0000001, 1, 1.0000001)
+bones/3/rotation = Quaternion(8.271806e-25, 3.7252903e-09, -2.75506e-40, 1)
+bones/3/scale = Vector3(1, 0.9999999, 1)
+bones/4/position = Vector3(0.21200736, 0.13413203, 7.9299625e-08)
+bones/4/rotation = Quaternion(-0.5599063, -0.060880348, -0.6439745, 0.5177794)
+bones/4/scale = Vector3(0.9999991, 0.9999986, 0.9999996)
+bones/5/rotation = Quaternion(3.6549825e-08, -4.8830096e-08, -0.49471933, 0.8690529)
+bones/5/scale = Vector3(1.0000006, 0.99999946, 1)
+bones/6/rotation = Quaternion(1.44633185e-08, 1.2667185e-08, 0.026658092, 0.99964464)
+bones/6/scale = Vector3(0.99999994, 1, 1)
+bones/7/rotation = Quaternion(-0.32106528, -0.32531866, 0.14572594, 0.8774103)
+bones/7/scale = Vector3(0.9999998, 0.99999976, 1.0000004)
+bones/8/position = Vector3(8.348433e-10, 0.096125185, -0.057500035)
+bones/8/rotation = Quaternion(-3.6586003e-09, 6.8781096e-09, -0.7071068, 0.7071067)
+bones/8/scale = Vector3(1, 1.0000001, 1.0000001)
+bones/9/position = Vector3(-0.21200737, 0.13413203, 8.6813984e-08)
+bones/9/rotation = Quaternion(-0.6182439, 0.08072865, 0.61801153, 0.47887278)
+bones/9/scale = Vector3(0.99999905, 0.9999985, 0.9999996)
+bones/10/rotation = Quaternion(2.0985292e-08, 5.128552e-08, 0.5179393, 0.85541743)
+bones/10/scale = Vector3(1.0000008, 0.9999997, 0.9999999)
+bones/11/rotation = Quaternion(-4.94615e-10, -1.4597426e-08, -0.026658095, 0.99964464)
+bones/11/scale = Vector3(1.0000001, 1, 1)
+bones/12/rotation = Quaternion(-0.31929126, 0.30052418, -0.22734973, 0.86951166)
+bones/12/scale = Vector3(0.9999998, 0.9999999, 1.0000002)
+bones/13/position = Vector3(-1.573599e-08, 0.096125126, -0.057499975)
+bones/13/rotation = Quaternion(-1.0244433e-09, -4.24391e-09, 0.7071068, 0.7071067)
+bones/13/scale = Vector3(1, 1.0000001, 1.0000001)
+bones/14/rotation = Quaternion(-5.8060785e-11, -0.031341746, -1.880125e-09, 0.99950874)
+bones/14/scale = Vector3(1, 0.99999994, 1)
+bones/15/position = Vector3(0.17094508, 0.1135872, 1.5994095e-08)
+bones/15/rotation = Quaternion(0.9961855, 0.04791363, 0.05664269, -0.04593895)
+bones/15/scale = Vector3(0.9999998, 0.9999997, 1.000001)
+bones/16/rotation = Quaternion(0.16501395, 6.494141e-08, -1.1140718e-07, 0.9862913)
+bones/16/scale = Vector3(1.0000004, 0.9999998, 0.99999994)
+bones/17/rotation = Quaternion(-0.53372866, -0.26089525, -1.7298482e-05, 0.80440503)
+bones/17/scale = Vector3(0.9999998, 1.0000011, 0.9999993)
+bones/18/rotation = Quaternion(0.00026347244, 0.9202156, -0.39141193, -5.963906e-05)
+bones/18/scale = Vector3(1, 0.9999973, 1.0000023)
+bones/19/position = Vector3(-0.17094508, 0.11358732, 1.557549e-08)
+bones/19/rotation = Quaternion(0.9973222, -0.029457364, 0.03152927, 0.05904832)
+bones/19/scale = Vector3(0.9999999, 0.99999976, 1.0000008)
+bones/20/rotation = Quaternion(0.2740081, -6.381352e-08, 1.9276102e-07, 0.9617275)
+bones/20/scale = Vector3(0.99999994, 0.99999976, 0.99999994)
+bones/21/rotation = Quaternion(-0.5590394, 0.11451276, -0.008627633, 0.82115)
+bones/21/scale = Vector3(0.99999976, 1.0000006, 0.9999992)
+bones/22/rotation = Quaternion(-8.934892e-05, 0.9202217, -0.3913977, 2.0290998e-05)
+bones/22/scale = Vector3(1.0000002, 0.9999979, 1.0000024)
+bones/23/rotation = Quaternion(0.7071068, -2.2930234e-07, -4.6055177e-08, 0.7071068)
+bones/24/position = Vector3(0.21391787, 0.025990263, 0.17386575)
+bones/24/rotation = Quaternion(-0.70509243, 0.05333549, 0.05333548, 0.70509243)
+bones/25/rotation = Quaternion(9.6579225e-09, 1.7795515e-09, 0.98571914, -0.1683977)
+bones/26/position = Vector3(-1.1148217e-08, 0.21343614, -5.3634723e-09)
+bones/26/rotation = Quaternion(-1.1096062e-07, 0.39108434, 0.92035484, -2.6791865e-08)
+bones/26/scale = Vector3(0.99999994, 0.9999999, 0.9999999)
+bones/27/position = Vector3(-6.3112795e-09, 0.16565004, -7.102669e-09)
+bones/27/scale = Vector3(1, 0.99999994, 1)
+bones/28/rotation = Quaternion(1, -8.2736366e-11, 1.9462742e-07, -7.450581e-09)
+bones/28/scale = Vector3(0.99999994, 1, 0.99999994)
+bones/29/rotation = Quaternion(5.551129e-17, -6.740978e-17, -1.9466935e-08, 1)
+bones/30/rotation = Quaternion(0.7071068, -3.823849e-08, 1.4500867e-07, 0.7071068)
+bones/31/rotation = Quaternion(-0.7071068, -7.0528515e-08, -7.05285e-08, 0.7071068)
+bones/32/rotation = Quaternion(-5.8358944e-09, 6.4383693e-10, 0.9948094, 0.10175614)
+bones/33/position = Vector3(-1.114822e-08, 0.21343614, -2.5094192e-15)
+bones/33/rotation = Quaternion(-1.05795515e-07, 0.39108434, 0.92035484, -2.5864264e-08)
+bones/33/scale = Vector3(1.0000001, 1, 0.9999999)
+bones/34/position = Vector3(-6.3112755e-09, 0.16565004, 2.7069498e-09)
+bones/34/rotation = Quaternion(-0.39108434, -6.739311e-08, -6.2200165e-08, 0.92035484)
+bones/34/scale = Vector3(1.0000001, 1, 1)
+bones/35/rotation = Quaternion(1, 3.7652574e-09, 1.9487908e-07, 7.4505815e-09)
+bones/35/scale = Vector3(0.99999994, 1, 0.99999994)
+bones/36/rotation = Quaternion(1.00614094e-16, -6.7409847e-17, -1.574163e-08, 1)
+bones/36/scale = Vector3(1.0000001, 1, 1)
+bones/37/rotation = Quaternion(-0.7071068, -7.279511e-08, -7.279509e-08, 0.7071068)
+bones/38/position = Vector3(0.52084064, 0.78831226, -0.05763735)
+bones/38/rotation = Quaternion(0.7946267, -1.1175871e-07, 0.6070983, -5.9604645e-08)
+bones/39/rotation = Quaternion(-0.7071068, -7.279511e-08, -7.279509e-08, 0.7071068)
+bones/40/position = Vector3(-0.5108437, 0.78831214, 0.059736922)
+bones/40/rotation = Quaternion(-0.7582528, -1.527369e-07, 0.65196073, -1.1175871e-08)
+bones/40/scale = Vector3(1, 1.0000001, 1)
 
-[node name="AnimationPlayer" parent="ModelsHandler/ModelsSpawner/TempModel/Skeleton_Minion" index="1"]
-autoplay = "Idle"
+[node name="AnimationPlayer" parent="ModelsHandler/ModelsSpawner/TempModel/Skeleton_Minion" index="1" unique_id=68282757]
+autoplay = &"Idle"
 
-[node name="Grid" type="MeshInstance3D" parent="ModelsHandler/ModelsSpawner"]
+[node name="Grid" type="MeshInstance3D" parent="ModelsHandler/ModelsSpawner" unique_id=230084947]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.006085396, -1.1920929e-07, 0.0049538612)
 mesh = SubResource("PlaneMesh_6vt7t")
 skeleton = NodePath("../../../Gizmo")
 surface_material_override/0 = ExtResource("2_6vt7t")
 
-[node name="PixelMaterial" type="Node" parent="."]
+[node name="PixelMaterial" type="Node" parent="." unique_id=324453165]
 script = ExtResource("16_yc5xn")
 
-[node name="ViewMaterials" type="Node" parent="."]
+[node name="ViewMaterials" type="Node" parent="." unique_id=1860272542]
 script = ExtResource("34_owbk2")
 
 [editable path="ModelsHandler/ModelsSpawner/TempModel/Skeleton_Minion"]

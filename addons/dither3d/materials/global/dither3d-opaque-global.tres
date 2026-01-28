@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://detyv7b2qm4vv"]
+
+[ext_resource type="Shader" uid="uid://8bnx6bvvfr36" path="res://addons/dither3d/shaders/global/Dither3DNextPassGlobal.gdshader" id="1_r7anu"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_r7anu")

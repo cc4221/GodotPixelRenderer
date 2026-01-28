@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://sseth6hr3r1a"]
+
+[ext_resource type="PackedScene" uid="uid://d003mkrsise2p" path="res://addons/dither3d/full-screen-effect/Dither3DMonochrome.tscn" id="1_ffnyt"]
+[ext_resource type="Material" uid="uid://crj3is1mhvqs2" path="res://addons/dither3d/materials/dither3d-opaque-default.tres" id="2_2frl3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+material = ExtResource("2_2frl3")
+
+[sub_resource type="SphereMesh" id="SphereMesh_1"]
+material = ExtResource("2_2frl3")
+
+[node name="MonochromeDemo" type="Node3D"]
+
+[node name="Dither3DMonochrome" parent="." instance=ExtResource("1_ffnyt")]
+monochrome_1bit = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.5, 4)
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -1.5, 0, 0)
+mesh = SubResource("BoxMesh_1")
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = SubResource("SphereMesh_1")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 46.0
+text = "Dither3D Monochrome Effect Demo"

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d003mkrsise2p"]
+
+[ext_resource type="Script" path="res://addons/dither3d/full-screen-effect/Dither3DMonochrome.gd" id="1_script"]
+[ext_resource type="Shader" uid="uid://bfqtadsnu525f" path="res://addons/dither3d/full-screen-effect/Monochrome.gdshader" id="1_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]
+shader = ExtResource("1_shader")
+shader_parameter/dark_color = Color(0, 0, 0, 1)
+shader_parameter/light_color = Color(1, 1, 1, 1)
+shader_parameter/monochrome_1bit = false
+
+[node name="Dither3DMonochrome" type="CanvasLayer"]
+script = ExtResource("1_script")
+layer = 100
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

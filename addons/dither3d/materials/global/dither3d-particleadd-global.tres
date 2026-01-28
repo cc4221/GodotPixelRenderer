@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://addons/dither3d/shaders/global/Dither3DParticleAddGlobal.gdshader" id="1_global"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_global")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/proximity_fade_distance = 1.0
+shader_parameter/inherit_albedo = false
