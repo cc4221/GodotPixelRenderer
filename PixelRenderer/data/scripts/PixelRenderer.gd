@@ -35,6 +35,21 @@ var original_close_texture: Texture2D
 @onready var canvas_size_label: Label = %CanvasSizeLabel
 @onready var pixel_material_script: Node = $PixelMaterial
 
+# Toon Material Parameter Controls
+@onready var cuts_size_spin: SpinBox = %CutsSizeSpin
+@onready var albedo_toon_color: ColorPickerButton = %AlbedoToonColor
+@onready var wrap_slider: HSlider = %WrapSlider
+@onready var steepness_slider: HSlider = %SteepnessSlider
+@onready var rim_check_box: CheckButton = %RimCheckBox
+@onready var rim_width_slider: HSlider = %RimWidthSlider
+@onready var albedo_rim_color: ColorPickerButton = %AlbedoRimColor
+@onready var borders_size_spin: SpinBox = %BordersSizeSpin
+@onready var albedo_borders_color: ColorPickerButton = %AlbedoBordersColor
+@onready var specular_check_box: CheckButton = %SpecularCheckBox
+@onready var spec_shininess_slider: HSlider = %SpecShininessSlider
+@onready var strength_slider: HSlider = %StrengthSlider
+@onready var ramp_check_box: CheckButton = %RampCheckBox
+
 @onready var console: TextEdit = %Console
 
 
@@ -130,6 +145,10 @@ func _ready():
 	# Initialize progress bar
 	progress_bar.min_value = 0
 	progress_bar.max_value = 100
+	
+	# Initialize and connect Toon material parameter controls
+	_initialize_toon_controls()
+	
 	
 
 func _on_fps_changed(value: float):
@@ -580,3 +599,79 @@ func _on_close_button_mouse_entered():
 func _on_close_button_mouse_exited():
 	# Restore original texture when mouse exits the button area
 	close_button.texture = original_close_texture
+
+func _initialize_toon_controls():
+	# Connect Toon material parameter control signals
+	cuts_size_spin.value_changed.connect(_on_cuts_size_changed)
+	albedo_toon_color.color_changed.connect(_on_albedo_toon_color_changed)
+	wrap_slider.value_changed.connect(_on_wrap_changed)
+	steepness_slider.value_changed.connect(_on_steepness_changed)
+	rim_check_box.toggled.connect(_on_rim_toggled)
+	rim_width_slider.value_changed.connect(_on_rim_width_changed)
+	albedo_rim_color.color_changed.connect(_on_albedo_rim_color_changed)
+	borders_size_spin.value_changed.connect(_on_borders_size_changed)
+	albedo_borders_color.color_changed.connect(_on_albedo_borders_color_changed)
+	specular_check_box.toggled.connect(_on_specular_toggled)
+	spec_shininess_slider.value_changed.connect(_on_spec_shininess_changed)
+	strength_slider.value_changed.connect(_on_strength_changed)
+	ramp_check_box.toggled.connect(_on_ramp_toggled)
+	
+	# Initialize default values
+	cuts_size_spin.value = 3
+	wrap_slider.value = 0.0
+	steepness_slider.value = 1.0
+	rim_width_slider.value = 8.0
+	spec_shininess_slider.value = 16.0
+	strength_slider.value = 1.0
+
+func _on_cuts_size_changed(value: float):
+	_update_toon_parameter("cuts", int(value))
+
+func _on_albedo_toon_color_changed(color: Color):
+	_update_toon_parameter("albedo", color)
+
+func _on_wrap_changed(value: float):
+	_update_toon_parameter("wrap", value)
+
+func _on_steepness_changed(value: float):
+	_update_toon_parameter("steepness", value)
+
+func _on_rim_toggled(enabled: bool):
+	_update_toon_parameter("use_rim", enabled)
+
+func _on_rim_width_changed(value: float):
+	_update_toon_parameter("rim_width", value)
+
+func _on_albedo_rim_color_changed(color: Color):
+	_update_toon_parameter("rim_color", color)
+
+func _on_borders_size_changed(value: float):
+	_update_toon_parameter("border_width", value)
+
+func _on_albedo_borders_color_changed(color: Color):
+	_update_toon_parameter("albedo", color)  # This might affect the main albedo too
+
+func _on_specular_toggled(enabled: bool):
+	_update_toon_parameter("use_specular", enabled)
+
+func _on_spec_shininess_changed(value: float):
+	_update_toon_parameter("specular_shininess", value)
+
+func _on_strength_changed(value: float):
+	_update_toon_parameter("specular_strength", value)
+
+func _on_ramp_toggled(enabled: bool):
+	_update_toon_parameter("use_ramp", enabled)
+
+func _update_toon_parameter(parameter_name: String, value):
+	# Get the ViewMaterials node to update the Toon material parameters
+	var view_materials = get_node_or_null("ViewMaterials")
+	if view_materials:
+		# Call the public method in ViewMaterials to update the Toon material
+		if view_materials.has_method("update_toon_material_parameter"):
+			view_materials.update_toon_material_parameter(parameter_name, value)
+			_update_progress("Updated Toon material parameter '" + parameter_name + "' to: " + str(value))
+		else:
+			_update_progress("ERROR: ViewMaterials does not have update_toon_material_parameter method")
+	else:
+		_update_progress("ERROR: Could not find ViewMaterials node")

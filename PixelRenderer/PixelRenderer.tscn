@@ -1565,7 +1565,9 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-step = 0.01
+min_value = -2.0
+max_value = 2.0
+step = 0.001
 
 [node name="PixelAdjust23" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=581256147]
 layout_mode = 2
@@ -1582,18 +1584,45 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+min_value = 1.0
+max_value = 8.0
 step = 0.01
+value = 1.0
 
 [node name="PixelAdjust25" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1155326762]
 layout_mode = 2
 alignment = 1
 
-[node name="RimCheckBox2" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust25" unique_id=1292314097]
+[node name="RimCheckBox" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust25" unique_id=1292314097]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 tooltip_text = "Export preview (Hi-res)"
 text = "Rim:"
+alignment = 2
+
+[node name="PixelAdjust27" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=555267739]
+layout_mode = 2
+alignment = 1
+
+[node name="AttenuationCheckBox" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust27" unique_id=875789719]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Export preview (Hi-res)"
+text = "attenuation:"
+alignment = 2
+
+[node name="PixelAdjust26" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=247471645]
+layout_mode = 2
+alignment = 1
+
+[node name="ClampDiffuseCheckBox" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust26" unique_id=467430049]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Export preview (Hi-res)"
+text = "Clamp Diffuse"
 alignment = 2
 
 [node name="PixelAdjust24" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=648812458]
@@ -1612,7 +1641,9 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+max_value = 16.0
 step = 0.01
+value = 8.0
 
 [node name="AlbedoRimColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust24" unique_id=265138384]
 unique_name_in_owner = true
@@ -1632,6 +1663,8 @@ horizontal_alignment = 2
 [node name="BordersSizeSpin" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=138362706]
 unique_name_in_owner = true
 layout_mode = 2
+max_value = 1.0
+step = 0.001
 
 [node name="AlbedoBordersColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=51723430]
 unique_name_in_owner = true
@@ -1665,7 +1698,9 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+max_value = 32.0
 step = 0.01
+value = 16.0
 
 [node name="VBoxContainer21" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=468768597]
 layout_mode = 2
@@ -1682,7 +1717,9 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+max_value = 1.0
 step = 0.01
+value = 1.0
 
 [node name="PixelAdjust22" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=340370141]
 layout_mode = 2
