@@ -71,6 +71,8 @@ bg_color = Color(0.140447, 0.140447, 0.140447, 1)
 [sub_resource type="ViewportTexture" id="ViewportTexture_6vt7t"]
 viewport_path = NodePath("SubViewport2")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e8x0m"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilx0h"]
 bg_color = Color(0.176471, 0.176471, 0.176471, 1)
 
@@ -1654,11 +1656,15 @@ color = Color(1, 1, 1, 1)
 [node name="PixelAdjust18" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=339269723]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=1091763203]
-custom_minimum_size = Vector2(220, 0)
+[node name="Spacer" type="Panel" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=411441496]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "Borders:"
-horizontal_alignment = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_e8x0m")
+
+[node name="BordersCheckButton" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=2057751724]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Borders"
 
 [node name="BordersSizeSpin" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=138362706]
 unique_name_in_owner = true

@@ -51,6 +51,7 @@ var original_close_texture: Texture2D
 @onready var ramp_check_box: CheckButton = %RampCheckBox
 @onready var attenuation_check_box: CheckButton = %AttenuationCheckBox
 @onready var clamp_diffuse_check_box: CheckButton = %ClampDiffuseCheckBox
+@onready var borders_check_box: CheckButton = %BordersCheckButton
 
 @onready var console: TextEdit = %Console
 
@@ -621,6 +622,7 @@ func _initialize_toon_controls():
 	# Connect additional Toon material parameter control signals
 	attenuation_check_box.toggled.connect(_on_attenuation_toggled)
 	clamp_diffuse_check_box.toggled.connect(_on_clamp_diffuse_toggled)
+	borders_check_box.toggled.connect(_on_borders_toggled)
 	
 	# Initialize default values
 	cuts_size_spin.value = 3
@@ -631,6 +633,7 @@ func _initialize_toon_controls():
 	strength_slider.value = 1.0
 	attenuation_check_box.button_pressed = false  # Changed to false as requested
 	clamp_diffuse_check_box.button_pressed = false  # Default to false based on shader
+	borders_check_box.button_pressed = false  # Default to false (borders disabled)
 
 func _on_cuts_size_changed(value: float):
 	_update_toon_parameter("cuts", int(value))
@@ -676,6 +679,9 @@ func _on_attenuation_toggled(enabled: bool):
 
 func _on_clamp_diffuse_toggled(enabled: bool):
 	_update_toon_parameter("clamp_diffuse_to_max", enabled)
+
+func _on_borders_toggled(enabled: bool):
+	_update_toon_parameter("use_borders", enabled)
 
 func _update_toon_parameter(parameter_name: String, value):
 	# Get the ViewMaterials node to update the Toon material parameters
