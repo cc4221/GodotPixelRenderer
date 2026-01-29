@@ -566,6 +566,7 @@ func _setup_view_mode_dropdown():
 	view_mode_dropdown.add_item("Albedo")
 	view_mode_dropdown.add_item("Normal")
 	view_mode_dropdown.add_item("Specular")
+	view_mode_dropdown.add_item("Toon")
 func _on_close_button_input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		get_tree().quit()

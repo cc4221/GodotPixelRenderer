@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://6f4rhpj0da3q" path="res://Sample/Skeleton_Minion.glb" id="27_wwtbg"]
 [ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="32_owbk2"]
 [ext_resource type="Script" uid="uid://1oqvcrn8dkab" path="res://PixelRenderer/data/scripts/view_materials.gd" id="34_owbk2"]
+[ext_resource type="Material" uid="uid://c7tq4ia6ixt3w" path="res://PixelRenderer/data/ToonMaterial.tres" id="35_e8x0m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6vt7t"]
 size = Vector3(0.01, 100, 0.01)
@@ -1290,14 +1291,14 @@ vertical_alignment = 2
 [node name="TabContainer" type="TabContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=1873555422]
 layout_mode = 2
 current_tab = 1
-tab_0/title = "Sobel"
-tab_1/title = "Distance"
+tab_0/title = "2D"
+tab_1/title = "3D"
 
 [node name="OutlineSobel" type="VBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer" unique_id=380150398]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
-metadata/_tab_name = "Sobel"
+metadata/_tab_name = "2D"
 
 [node name="PixelAdjust10" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineSobel" unique_id=1036682322]
 layout_mode = 2
@@ -1341,7 +1342,7 @@ step = 0.1
 [node name="OutlineDistance" type="VBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer" unique_id=1982949571]
 layout_mode = 2
 metadata/_tab_index = 1
-metadata/_tab_name = "Distance"
+metadata/_tab_name = "3D"
 
 [node name="PixelAdjust11" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/TabContainer/OutlineDistance" unique_id=2076113397]
 layout_mode = 2
@@ -1539,9 +1540,12 @@ text = "Cuts:"
 horizontal_alignment = 2
 
 [node name="CutsSizeSpin" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17" unique_id=1790628722]
+unique_name_in_owner = true
 layout_mode = 2
+value = 3.0
 
-[node name="AlbedoColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17" unique_id=87708327]
+[node name="AlbedoToonColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust17" unique_id=87708327]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 color = Color(1, 1, 1, 1)
@@ -1555,7 +1559,8 @@ layout_mode = 2
 text = "Wrap:"
 horizontal_alignment = 2
 
-[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust21" unique_id=1618440598]
+[node name="WrapSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust21" unique_id=1618440598]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1571,7 +1576,8 @@ layout_mode = 2
 text = "Steepness:"
 horizontal_alignment = 2
 
-[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust23" unique_id=889075359]
+[node name="SteepnessSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust23" unique_id=889075359]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1582,7 +1588,8 @@ step = 0.01
 layout_mode = 2
 alignment = 1
 
-[node name="PreviewImageCheckBox2" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust25" unique_id=1292314097]
+[node name="RimCheckBox2" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust25" unique_id=1292314097]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 tooltip_text = "Export preview (Hi-res)"
@@ -1599,14 +1606,16 @@ layout_mode = 2
 text = "Rim width:"
 horizontal_alignment = 2
 
-[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust24" unique_id=428234545]
+[node name="RimWidthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust24" unique_id=428234545]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 step = 0.01
 
-[node name="AlbedoColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust24" unique_id=265138384]
+[node name="AlbedoRimColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust24" unique_id=265138384]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 color = Color(1, 1, 1, 1)
@@ -1620,10 +1629,12 @@ layout_mode = 2
 text = "Borders:"
 horizontal_alignment = 2
 
-[node name="CutsSizeSpin" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=138362706]
+[node name="BordersSizeSpin" type="SpinBox" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=138362706]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="AlbedoColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=51723430]
+[node name="AlbedoBordersColor" type="ColorPickerButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust18" unique_id=51723430]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 
@@ -1631,7 +1642,8 @@ layout_mode = 2
 layout_mode = 2
 alignment = 1
 
-[node name="PreviewImageCheckBox2" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust19" unique_id=214907196]
+[node name="SpecularCheckBox" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust19" unique_id=214907196]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 tooltip_text = "Export preview (Hi-res)"
@@ -1647,7 +1659,8 @@ layout_mode = 2
 text = "Spec shininess:"
 horizontal_alignment = 2
 
-[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust20" unique_id=565943041]
+[node name="SpecShininessSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust20" unique_id=565943041]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1663,7 +1676,8 @@ layout_mode = 2
 text = "Strength:"
 horizontal_alignment = 2
 
-[node name="DitherThresholdSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/VBoxContainer21" unique_id=1814765135]
+[node name="StrengthSlider" type="HSlider" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/VBoxContainer21" unique_id=1814765135]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1674,7 +1688,8 @@ step = 0.01
 layout_mode = 2
 alignment = 1
 
-[node name="PreviewImageCheckBox2" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust22" unique_id=1078358472]
+[node name="RampCheckBox" type="CheckButton" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer/PixelAdjust22" unique_id=1078358472]
+unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Export preview (Hi-res)"
 text = "Ramp:"
@@ -3378,5 +3393,12 @@ script = ExtResource("16_yc5xn")
 
 [node name="ViewMaterials" type="Node" parent="." unique_id=1860272542]
 script = ExtResource("34_owbk2")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1846180274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.66148, 5.375486, 73.170715)
+radius = 0.83
+radial_segments = 16
+rings = 11
+material = ExtResource("35_e8x0m")
 
 [editable path="ModelsHandler/ModelsSpawner/TempModel/Skeleton_Minion"]
