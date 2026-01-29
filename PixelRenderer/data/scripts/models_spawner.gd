@@ -267,7 +267,43 @@ func _load_model(path: String):
 		await get_tree().process_frame
 		pixel_material_script.sample_colors_from_render()
 	
+	# Reapply the current view mode to the newly loaded model
+	_reapply_current_view_mode()
+	
 	_update_console("Successfully loaded model: " + path)
+
+func _reapply_current_view_mode():
+	# Get the main PixelRenderer node to access the current view mode
+	var pixel_renderer = get_parent()  # Assuming this node is a direct child of PixelRenderer
+	
+	if pixel_renderer and pixel_renderer.has_node("ViewMaterials") and pixel_renderer.has_node("ViewModeDropDown"):
+		var view_materials = pixel_renderer.get_node("ViewMaterials")
+		var view_mode_dropdown = pixel_renderer.get_node("ViewModeDropDown")
+		
+		if view_materials and view_mode_dropdown:
+			# Get the currently selected view mode index
+			var current_index = view_mode_dropdown.selected
+			if current_index >= 0:
+				var current_mode = view_mode_dropdown.get_item_text(current_index)
+				
+				# For Toon mode, we need to wait a frame to ensure the new model is fully loaded
+				# before attempting to reapply the material with proper texture extraction
+				if current_mode == "Toon":
+					# Wait a frame to allow the new model to be fully initialized
+					await get_tree().process_frame
+					await get_tree().process_frame  # Wait an additional frame for safety
+					
+					# Reapply the current view mode to the new model
+					view_materials.item_selected(current_index)
+					_update_console("Reapplied Toon view mode after model load (with delay for proper initialization)")
+				else:
+					# For other modes, apply immediately
+					view_materials.item_selected(current_index)
+					_update_console("Reapplied current view mode (" + view_mode_dropdown.get_item_text(current_index) + ") after model load")
+		else:
+			_update_console("WARNING: Could not find ViewMaterials or ViewModeDropDown nodes to reapply view mode")
+	else:
+		_update_console("WARNING: Could not access PixelRenderer components to reapply view mode")
 
 func _setup_animation_player():
 	# Find AnimationPlayer in the loaded model

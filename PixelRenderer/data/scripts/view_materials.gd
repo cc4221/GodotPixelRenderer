@@ -37,10 +37,7 @@ func item_selected(index : int):
 					if mesh.mesh:
 						original_material = mesh.mesh.surface_get_material(0)
 				
-				# Apply the Toon material first
-				mesh.set_surface_override_material(0, TOON_MATERIAL)
-				
-				# Copy albedo texture from original material to the Toon material
+				# Copy albedo texture from original material to the Toon material FIRST
 				if original_material:
 					var albedo_tex = null
 					
@@ -89,6 +86,9 @@ func item_selected(index : int):
 						print("No albedo texture found for mesh: ", mesh.name, ", using default Toon material")
 				else:
 					print("No original material found for mesh: ", mesh.name, ", using Toon material with defaults")
+				
+				# Apply the Toon material LAST, after extracting the original texture
+				mesh.set_surface_override_material(0, TOON_MATERIAL)
 		
 			
 			
