@@ -49,6 +49,8 @@ var original_close_texture: Texture2D
 @onready var spec_shininess_slider: HSlider = %SpecShininessSlider
 @onready var strength_slider: HSlider = %StrengthSlider
 @onready var ramp_check_box: CheckButton = %RampCheckBox
+@onready var attenuation_check_box: CheckButton = %AttenuationCheckBox
+@onready var clamp_diffuse_check_box: CheckButton = %ClampDiffuseCheckBox
 
 @onready var console: TextEdit = %Console
 
@@ -616,6 +618,10 @@ func _initialize_toon_controls():
 	strength_slider.value_changed.connect(_on_strength_changed)
 	ramp_check_box.toggled.connect(_on_ramp_toggled)
 	
+	# Connect additional Toon material parameter control signals
+	attenuation_check_box.toggled.connect(_on_attenuation_toggled)
+	clamp_diffuse_check_box.toggled.connect(_on_clamp_diffuse_toggled)
+	
 	# Initialize default values
 	cuts_size_spin.value = 3
 	wrap_slider.value = 0.0
@@ -623,6 +629,8 @@ func _initialize_toon_controls():
 	rim_width_slider.value = 8.0
 	spec_shininess_slider.value = 16.0
 	strength_slider.value = 1.0
+	attenuation_check_box.button_pressed = false  # Changed to false as requested
+	clamp_diffuse_check_box.button_pressed = false  # Default to false based on shader
 
 func _on_cuts_size_changed(value: float):
 	_update_toon_parameter("cuts", int(value))
@@ -662,6 +670,12 @@ func _on_strength_changed(value: float):
 
 func _on_ramp_toggled(enabled: bool):
 	_update_toon_parameter("use_ramp", enabled)
+
+func _on_attenuation_toggled(enabled: bool):
+	_update_toon_parameter("use_attenuation", enabled)
+
+func _on_clamp_diffuse_toggled(enabled: bool):
+	_update_toon_parameter("clamp_diffuse_to_max", enabled)
 
 func _update_toon_parameter(parameter_name: String, value):
 	# Get the ViewMaterials node to update the Toon material parameters

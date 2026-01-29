@@ -1610,7 +1610,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 tooltip_text = "Export preview (Hi-res)"
-text = "attenuation:"
+text = "Attenuation:"
 alignment = 2
 
 [node name="PixelAdjust26" type="HBoxContainer" parent="MainUI/UI_Controls/ScrollContainer/VBoxContainer" unique_id=247471645]

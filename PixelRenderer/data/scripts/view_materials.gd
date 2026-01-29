@@ -118,3 +118,7 @@ func update_toon_material_parameter(param_name: String, value):
 		print("Updated Toon material parameter '", param_name, "' to: ", value)
 	else:
 		print("ERROR: TOON_MATERIAL not available")
+
+# Public method to get the Toon material instance
+func get_toon_material():
+	return TOON_MATERIAL
