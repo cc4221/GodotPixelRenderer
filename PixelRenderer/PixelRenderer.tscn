@@ -34,7 +34,6 @@
 [ext_resource type="PackedScene" uid="uid://6f4rhpj0da3q" path="res://Sample/Skeleton_Minion.glb" id="27_wwtbg"]
 [ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="32_owbk2"]
 [ext_resource type="Script" uid="uid://1oqvcrn8dkab" path="res://PixelRenderer/data/scripts/view_materials.gd" id="34_owbk2"]
-[ext_resource type="Material" uid="uid://c7tq4ia6ixt3w" path="res://PixelRenderer/data/ToonMaterial.tres" id="35_e8x0m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6vt7t"]
 size = Vector3(0.01, 100, 0.01)
@@ -609,6 +608,7 @@ text = "X:"
 [node name="XRotSpin" type="SpinBox" parent="MainUI/UI_Controls2/ScrollContainer/LeftPanel/RotationAdjust" unique_id=2089004431]
 unique_name_in_owner = true
 layout_mode = 2
+max_value = 360.0
 step = 0.1
 allow_greater = true
 allow_lesser = true
@@ -620,6 +620,7 @@ text = "Y:"
 [node name="YRotSpin" type="SpinBox" parent="MainUI/UI_Controls2/ScrollContainer/LeftPanel/RotationAdjust" unique_id=1982420875]
 unique_name_in_owner = true
 layout_mode = 2
+max_value = 360.0
 step = 0.1
 allow_greater = true
 allow_lesser = true
@@ -631,6 +632,7 @@ text = "Z:"
 [node name="ZRotSpin" type="SpinBox" parent="MainUI/UI_Controls2/ScrollContainer/LeftPanel/RotationAdjust" unique_id=570678216]
 unique_name_in_owner = true
 layout_mode = 2
+max_value = 360.0
 step = 0.1
 allow_greater = true
 allow_lesser = true
@@ -776,6 +778,7 @@ stretch_mode = 4
 [node name="KeyLightRotSpin" type="SpinBox" parent="MainUI/UI_Controls2/ScrollContainer/LeftPanel/HBoxContainer4" unique_id=154490267]
 unique_name_in_owner = true
 layout_mode = 2
+max_value = 360.0
 step = 0.1
 allow_greater = true
 allow_lesser = true
@@ -836,6 +839,7 @@ stretch_mode = 4
 [node name="FillLightRotSpin" type="SpinBox" parent="MainUI/UI_Controls2/ScrollContainer/LeftPanel/HBoxContainer6" unique_id=2076513469]
 unique_name_in_owner = true
 layout_mode = 2
+max_value = 360.0
 step = 0.1
 allow_greater = true
 allow_lesser = true
@@ -896,6 +900,7 @@ stretch_mode = 4
 [node name="RimLightRotSpin" type="SpinBox" parent="MainUI/UI_Controls2/ScrollContainer/LeftPanel/HBoxContainer8" unique_id=1980321880]
 unique_name_in_owner = true
 layout_mode = 2
+max_value = 360.0
 step = 0.1
 allow_greater = true
 allow_lesser = true
@@ -3426,7 +3431,7 @@ autoplay = &"Idle"
 
 [node name="Grid" type="MeshInstance3D" parent="ModelsHandler/ModelsSpawner" unique_id=230084947]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.026810646, -3.5762787e-07, 0.0086631775)
+transform = Transform3D(-4.37114e-08, -1, 0, 0.99997187, -4.371017e-08, -0.0075048455, 0.0075048455, -3.2804728e-10, 0.99997187, -0.026810646, -3.5762787e-07, 0.0086631775)
 mesh = SubResource("PlaneMesh_6vt7t")
 skeleton = NodePath("../../../Gizmo")
 surface_material_override/0 = ExtResource("32_owbk2")
@@ -3436,12 +3441,5 @@ script = ExtResource("16_yc5xn")
 
 [node name="ViewMaterials" type="Node" parent="." unique_id=1860272542]
 script = ExtResource("34_owbk2")
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1846180274]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.66148, 5.375486, 73.170715)
-radius = 0.83
-radial_segments = 16
-rings = 11
-material = ExtResource("35_e8x0m")
 
 [editable path="ModelsHandler/ModelsSpawner/TempModel/Skeleton_Minion"]

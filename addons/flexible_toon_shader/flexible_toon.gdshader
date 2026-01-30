@@ -27,6 +27,7 @@ uniform sampler2D ramp : source_color;
 
 uniform bool use_borders = false;
 uniform float border_width = 0.01f;
+uniform vec4 border_color : source_color = vec4(0.0f, 0.0f, 0.0f, 1.0f);
 
 varying vec3 vertex_pos;
 varying vec3 normal;
@@ -73,6 +74,11 @@ void light() {
 		diffuse *= texture(ramp, vec2(diffuse_stepped * (1.0f - border), 0.0f)).rgb;
 	} else {
 		diffuse *= diffuse_stepped * (1.0f - border);
+	}
+	
+	// Apply border color.
+	if (use_borders && border > 0.5f) {
+		diffuse = border_color.rgb * LIGHT_COLOR / PI * border_color.a;
 	}
 	
 	if (clamp_diffuse_to_max) {

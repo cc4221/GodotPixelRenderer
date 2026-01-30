@@ -660,7 +660,7 @@ func _on_borders_size_changed(value: float):
 	_update_toon_parameter("border_width", value)
 
 func _on_albedo_borders_color_changed(color: Color):
-	_update_toon_parameter("albedo", color)  # This might affect the main albedo too
+	_update_toon_parameter("border_color", color)  # Update the border color specifically
 
 func _on_specular_toggled(enabled: bool):
 	_update_toon_parameter("use_specular", enabled)
