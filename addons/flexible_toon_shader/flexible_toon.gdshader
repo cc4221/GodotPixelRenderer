@@ -32,6 +32,11 @@ uniform vec4 border_color : source_color = vec4(0.0f, 0.0f, 0.0f, 1.0f);
 varying vec3 vertex_pos;
 varying vec3 normal;
 
+// Emission variables
+uniform bool use_emission = false;
+uniform float emission_strength : hint_range(0.0f, 5.0f) = 1.0f;
+uniform sampler2D emission_texture : source_color;
+
 float split_specular(float specular) {
 	return step(0.5f, specular);
 }
@@ -43,6 +48,12 @@ void vertex() {
 
 void fragment() {
 	ALBEDO = albedo.rgb * texture(albedo_texture, UV).rgb;
+	
+	// If emission is enabled, we still set the base emission here
+	if (use_emission) {
+		vec3 emission = texture(emission_texture, UV).rgb * emission_strength;
+		EMISSION = emission;
+	}
 }
 
 void light() {
@@ -105,4 +116,6 @@ void light() {
 		float rim_light = pow(1.0 - NdotV, rim_width);
 		SPECULAR_LIGHT += rim_light * rim_color.rgb * rim_color.a * LIGHT_COLOR / PI; //Changed DIFFUSE_LIGHT to SPECULAR_LIGHT while migrating for similar result
 	}
+	
 }
+

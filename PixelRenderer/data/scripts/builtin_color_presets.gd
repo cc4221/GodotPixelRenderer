@@ -6,8 +6,8 @@ extends RefCounted
 # 
 # Extended support for 256-color palettes (v4.6):
 # - The "PIX256" preset contains a 256-color palette spread across multiple entries
-# - The shader now supports up to 64 colors via palette_color_1 through palette_color_64
-# - Use palette_color_count uniform in shader to select active palette size (2-64)
+# - The shader now supports up to 256 colors via palette_color_1 through palette_color_256
+# - Use palette_color_count uniform in shader to select active palette size (2-256)
 # - For color selection from 256-color palette, create custom presets or use color sampling
 
 static var COLOR_PRESETS = {

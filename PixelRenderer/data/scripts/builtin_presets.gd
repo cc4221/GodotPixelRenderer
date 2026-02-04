@@ -6,7 +6,7 @@ extends RefCounted
 # 256-Color Palette Support (v4.6):
 # - The "256 Colors" preset is optimized for 256-color palettes
 # - color_steps can be set from 2 to 256 (in presets)
-# - palette_color_count determines how many colors are active (2-64 in shader)
+# - palette_color_count determines how many colors are active (2-256 in shader)
 # - Combine high color_steps with palette mode for precise color matching
 # 
 # To use 256-color mode:
@@ -269,7 +269,7 @@ static var PRESETS = {
 		"outline": 0.0,
 		"outline_color": Color(0.0, 0.0, 0.0, 1.0),
 		"use_palette": true,
-		"palette_color_count": 64,
+		"palette_color_count": 256,
 		"palette_color_1": Color(0.0, 0.0, 0.0, 1.0),
 		"palette_color_2": Color(0.133, 0.137, 0.137, 1.0),
 		"palette_color_3": Color(0.263, 0.271, 0.286, 1.0),

@@ -9,6 +9,7 @@ var TOON_MATERIAL = preload("res://PixelRenderer/data/ToonMaterial.tres")
 
 @onready var models_spawner: Node3D = %ModelsSpawner
 @onready var view_mode_dropdown : OptionButton = %ViewModeDropDown
+@onready var emission_check_box: CheckButton = %EmissionCheckBox
 
 func item_selected(index : int):
 	var meshes = get_all_mesh_instances(get_all_children(models_spawner))
@@ -40,13 +41,15 @@ func item_selected(index : int):
 				# Apply the Toon material
 				mesh.set_surface_override_material(0, TOON_MATERIAL)
 				
-				# Copy albedo texture from original material to the Toon material
+				# Copy albedo and emission textures from original material to the Toon material
 				if original_material:
 					var albedo_tex = null
+					var emission_tex = null
 					
 					# Try to get albedo texture from various possible property names in the original material
 					if original_material.get_class() == "StandardMaterial3D" or original_material.get_class() == "BaseMaterial3D":
 						albedo_tex = original_material.albedo_texture
+						emission_tex = original_material.emission_texture
 					elif original_material.get_class() == "ShaderMaterial":
 						# For ShaderMaterial, attempt to get common albedo texture parameter names
 						# Since Godot doesn't have a safe way to check if a shader parameter exists without potential errors,
@@ -63,6 +66,21 @@ func item_selected(index : int):
 								temp_tex = original_material.get_shader_parameter("texture_albedo")
 								if temp_tex:
 									albedo_tex = temp_tex
+						
+						# Also try to get emission texture
+						temp_tex = original_material.get_shader_parameter("emission_texture")
+						if temp_tex:
+							emission_tex = temp_tex
+						else:
+							# Try alternative emission texture names
+							temp_tex = original_material.get_shader_parameter("emissive_texture")
+							if temp_tex:
+								emission_tex = temp_tex
+							else:
+								temp_tex = original_material.get_shader_parameter("emission")
+								if temp_tex:
+									emission_tex = temp_tex
+								
 					elif original_material.has_meta("albedo_texture"):
 						albedo_tex = original_material.get_meta("albedo_texture")
 					elif original_material.has_meta("texture_albedo"):
@@ -77,8 +95,11 @@ func item_selected(index : int):
 							for surface_idx in range(array_mesh.get_surface_count()):
 								var surf_mat = array_mesh.surface_get_material(surface_idx)
 								if surf_mat and (surf_mat.get_class() == "StandardMaterial3D" or surf_mat.get_class() == "BaseMaterial3D"):
-									albedo_tex = surf_mat.albedo_texture
-									if albedo_tex:
+									if not albedo_tex:
+										albedo_tex = surf_mat.albedo_texture
+									if not emission_tex:
+										emission_tex = surf_mat.emission_texture
+									if albedo_tex and emission_tex:
 										break
 					
 					# Set the albedo texture in the Toon material
@@ -87,6 +108,15 @@ func item_selected(index : int):
 						print("Applied albedo texture to Toon material for mesh: ", mesh.name)
 					else:
 						print("No albedo texture found for mesh: ", mesh.name, ", using default Toon material")
+					
+					# Set the emission texture in the Toon material if it exists
+					if emission_tex and TOON_MATERIAL:
+						TOON_MATERIAL.set_shader_parameter("emission_texture", emission_tex)
+						TOON_MATERIAL.set_shader_parameter("use_emission", true)
+						print("Applied emission texture to Toon material for mesh: ", mesh.name)
+					else:
+						TOON_MATERIAL.set_shader_parameter("use_emission", false)
+						print("No emission texture found for mesh: ", mesh.name, ", using Toon material without emission")
 				else:
 					print("No original material found for mesh: ", mesh.name, ", using Toon material with defaults")
 		
@@ -115,6 +145,13 @@ func get_all_mesh_instances(array : Array) -> Array[MeshInstance3D]:
 func update_toon_material_parameter(param_name: String, value):
 	if TOON_MATERIAL:
 		TOON_MATERIAL.set_shader_parameter(param_name, value)
+		
+		# Special handling for emission-related parameters
+		if param_name.begins_with("emission"):
+			# Enable emission if an emission texture or parameter is set
+			if param_name == "emission_texture" or param_name == "use_emission":
+				TOON_MATERIAL.set_shader_parameter("use_emission", true)
+		
 		print("Updated Toon material parameter '", param_name, "' to: ", value)
 	else:
 		print("ERROR: TOON_MATERIAL not available")
@@ -122,3 +159,12 @@ func update_toon_material_parameter(param_name: String, value):
 # Public method to get the Toon material instance
 func get_toon_material():
 	return TOON_MATERIAL
+
+func _ready():
+	if emission_check_box:
+		emission_check_box.toggled.connect(_on_emission_toggled)
+
+func _on_emission_toggled(toggled_on: bool):
+	if TOON_MATERIAL:
+		TOON_MATERIAL.set_shader_parameter("use_emission", toggled_on)
+		print("Emission set to: ", toggled_on)
