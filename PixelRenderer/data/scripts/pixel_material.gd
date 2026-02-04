@@ -3,12 +3,11 @@ extends Node
 # PixelMaterial Controller for Godot 4.6 with 256-color palette support
 # 
 # 256-Color Support:
-# - The shader supports up to 64 colors in the palette (palette_color_1 to palette_color_64)
+# - The shader supports up to 256 colors in the palette (palette_color_1 to palette_color_256)
 # - Use the "256 Colors" preset for optimal 256-color palette handling
 # - PIX256 color preset contains full 256-color palette from Lospec
 # - Palette colors are applied dynamically via _apply_palette_colors()
-# - For more colors beyond 64, consider extending shader or using color quantization
-# 
+#
 # Usage:
 # 1. Load preset "256 Colors" for recommended settings
 # 2. Select "PIX256" from color presets for 256-color palette
@@ -114,7 +113,7 @@ const DEFAULT_VALUES = {
 	"shadow_color": Color(0.0, 0.0, 0.0, 1.0),
 	"highlight_color": Color(1.0, 1.0, 1.0, 1.0),
 	"use_palette": true,  # Match shader default
-	"palette_color_count": 8,  # Number of palette colors (2-64 for shader, can extend)
+	"palette_color_count": 8,  # Number of palette colors (2-256 for shader)
 	"palette_color_1": Color(0.051, 0.169, 0.271, 1.0),
 	"palette_color_2": Color(0.125, 0.235, 0.337, 1.0),
 	"palette_color_3": Color(0.329, 0.306, 0.408, 1.0),
@@ -141,7 +140,7 @@ var filtered_color_presets: Array[String] = []
 var current_color_preset_name: String = ""
 var is_loading_color_preset: bool = false
 
-# Extended palette storage for 64+ colors (like PIX256)
+# Extended palette storage for 256+ colors (like PIX256)
 var extended_palette_colors: Dictionary = {}  # Stores palette_color_N for all colors
 var current_palette_color_count: int = 8  # Track active palette color count
 
@@ -494,7 +493,7 @@ func _update_color_preset_list():
 		
 		# Don't add extra info to Custom preset, only to extended palettes
 		if preset_name != "Custom":
-			# Check if this preset has extended colors (64+ colors)
+			# Check if this preset has extended colors (256+ colors)
 			var preset_data = all_color_presets[preset_name]
 			var color_count = 8
 			for j in range(1, 257):
@@ -520,11 +519,11 @@ func _select_color_preset(preset_name: String):
 	
 	var preset_data = all_color_presets[preset_name]
 	
-	# Store extended palette colors for presets with 64+ colors
+	# Store extended palette colors for presets with 256+ colors
 	extended_palette_colors.clear()
 	current_palette_color_count = 8  # Default
 	
-	# Check if this is an extended palette (64+ colors)
+	# Check if this is an extended palette (256+ colors)
 	var max_color_count = 8
 	for i in range(1, 257):  # Check up to 256 colors
 		var color_key = "palette_color_" + str(i)
@@ -1469,13 +1468,12 @@ func _apply_palette_colors():
 			# Fall back to default values
 			color = DEFAULT_VALUES.get(color_key, Color.BLACK)
 		
-		# Only apply to shader if within shader's supported range (up to 64)
-		if i <= 64:
-			PIXEL_MATERIAL.set_shader_parameter(color_key, color)
-	
+		# Apply to shader (shader supports up to 256 colors)
+		PIXEL_MATERIAL.set_shader_parameter(color_key, color)
+
 	# Set the palette color count (number of colors to use)
 	var palette_count = current_palette_color_count
-	PIXEL_MATERIAL.set_shader_parameter("palette_color_count", min(palette_count, 64))
+	PIXEL_MATERIAL.set_shader_parameter("palette_color_count", min(palette_count, 256))
 
 func _apply_sampled_colors_to_palette(colors: Array[Color]):
 	"""
